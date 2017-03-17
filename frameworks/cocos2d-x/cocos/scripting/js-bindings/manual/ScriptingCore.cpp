@@ -570,6 +570,7 @@ void ScriptingCore::start()
 {
     // for now just this
     createGlobalContext();
+    ifFirst = false;
 }
 
 void ScriptingCore::addRegisterCallback(sc_register_sth callback) {
@@ -635,6 +636,10 @@ void ScriptingCore::createGlobalContext() {
         _jsInited = true;
     }
 
+    if(!ifFirst){//!!!!!!!ADD THIS 添加这个初始化
+        initRegister();
+    }
+    
     // Removed from Spidermonkey 19.
     //JS_SetCStringsAreUTF8();
     _rt = JS_NewRuntime(8L * 1024L * 1024L);

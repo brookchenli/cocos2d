@@ -1383,6 +1383,7 @@ void DisplayLinkDirector::mainLoop()
     {
         _purgeDirectorInNextLoop = false;
         purgeDirector();
+        Application::getInstance()->clearSc();
     }
     else if (_restartDirectorInNextLoop)
     {

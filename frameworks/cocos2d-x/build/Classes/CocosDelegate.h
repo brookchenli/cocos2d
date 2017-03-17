@@ -50,6 +50,7 @@ public:
     void startCocosScene002();
     
     void exitLuaGameView();
+    virtual void clearSc();
 
 };
 

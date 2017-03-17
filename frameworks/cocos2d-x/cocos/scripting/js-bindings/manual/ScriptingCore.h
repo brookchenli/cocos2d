@@ -89,6 +89,7 @@ private:
 
     bool _callFromScript;
     ScriptingCore();
+    bool ifFirst = true;
 public:
     ~ScriptingCore();
 

@@ -197,3 +197,7 @@ void CocosDelegate::applicationWillEnterForeground()
     SimpleAudioEngine::getInstance()->resumeBackgroundMusic();
     SimpleAudioEngine::getInstance()->resumeAllEffects();
 }
+
+void CocosDelegate::clearSc(){
+    ScriptingCore::getInstance()->cleanup();
+}

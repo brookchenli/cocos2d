@@ -209,8 +209,9 @@ static CocosManager *instance = nullptr;
     //退出时删除eglview，不然再次加载时opengl会出错，模拟器显示红色，真机透明
     self.m_eaglView = nullptr;
     instance = nullptr;
-    CppAdapter::getInstance()->setCocosIsInit(false);
-    CppAdapter::getInstance()->exitCocosGame();
+    //CppAdapter::getInstance()->setCocosIsInit(false);
+    //CppAdapter::getInstance()->exitCocosGame();
+    cocos2d::Director::getInstance()->end();
 }
 
 @end

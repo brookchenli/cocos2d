@@ -5687,7 +5687,7 @@
 		BC6295A11E7BB3B600F45634 /* CocosDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = BC62958D1E7BB1DC00F45634 /* CocosDelegate.h */; };
 		BC6295A21E7BB3BC00F45634 /* CppAdapter.h in Headers */ = {isa = PBXBuildFile; fileRef = BC6295911E7BB1DC00F45634 /* CppAdapter.h */; };
 		BC6295A31E7BB3BF00F45634 /* GameViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = BC6295921E7BB1DC00F45634 /* GameViewController.h */; };
-		BC6295A51E7BB82B00F45634 /* libjscocos2d iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BC6295A41E7BB82B00F45634 /* libjscocos2d iOS.a */; };
+		BC6295AB1E7BC89C00F45634 /* libjscocos2d iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BC6295AA1E7BC89C00F45634 /* libjscocos2d iOS.a */; };
 		C50306691B60B583001E6D43 /* CCBoneNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C50306631B60B583001E6D43 /* CCBoneNode.cpp */; };
 		C503066A1B60B583001E6D43 /* CCBoneNode.h in Headers */ = {isa = PBXBuildFile; fileRef = C50306641B60B583001E6D43 /* CCBoneNode.h */; };
 		C503066B1B60B583001E6D43 /* CCSkeletonNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C50306651B60B583001E6D43 /* CCSkeletonNode.cpp */; };
@@ -7754,7 +7754,7 @@
 		BC6295911E7BB1DC00F45634 /* CppAdapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CppAdapter.h; sourceTree = "<group>"; };
 		BC6295921E7BB1DC00F45634 /* GameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameViewController.h; sourceTree = "<group>"; };
 		BC6295931E7BB1DC00F45634 /* GameViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = GameViewController.mm; sourceTree = "<group>"; };
-		BC6295A41E7BB82B00F45634 /* libjscocos2d iOS.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libjscocos2d iOS.a"; sourceTree = "<group>"; };
+		BC6295AA1E7BC89C00F45634 /* libjscocos2d iOS.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libjscocos2d iOS.a"; sourceTree = "<group>"; };
 		C50306631B60B583001E6D43 /* CCBoneNode.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CCBoneNode.cpp; sourceTree = "<group>"; };
 		C50306641B60B583001E6D43 /* CCBoneNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCBoneNode.h; sourceTree = "<group>"; };
 		C50306651B60B583001E6D43 /* CCSkeletonNode.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CCSkeletonNode.cpp; sourceTree = "<group>"; };
@@ -7843,7 +7843,7 @@
 				1A570364180BD1120088DEC7 /* libpng.a in Frameworks */,
 				1A570378180BD1B40088DEC7 /* libjpeg.a in Frameworks */,
 				1A5703A4180BD2350088DEC7 /* libtiff.a in Frameworks */,
-				BC6295A51E7BB82B00F45634 /* libjscocos2d iOS.a in Frameworks */,
+				BC6295AB1E7BC89C00F45634 /* libjscocos2d iOS.a in Frameworks */,
 				292F1A5D1A5151CE00E479F8 /* libcrypto.a in Frameworks */,
 				29031E0919BFE8DE00EFA1DF /* libchipmunk.a in Frameworks */,
 				1A5703BB180BD2800088DEC7 /* libwebp.a in Frameworks */,
@@ -7887,7 +7887,7 @@
 		1551A334158F2AB200E66CFE = {
 			isa = PBXGroup;
 			children = (
-				BC6295A41E7BB82B00F45634 /* libjscocos2d iOS.a */,
+				BC6295AA1E7BC89C00F45634 /* libjscocos2d iOS.a */,
 				BC62958B1E7BB1DC00F45634 /* Classes */,
 				46A15FCC1807A544005B8026 /* AUTHORS */,
 				1A57FFF7180BC5160088DEC7 /* CHANGELOG */,
