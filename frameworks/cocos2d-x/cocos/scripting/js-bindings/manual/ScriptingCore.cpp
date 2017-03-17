@@ -519,6 +519,10 @@ void ScriptingCore::string_report(JS::HandleValue val) {
 
 bool ScriptingCore::evalString(const char *string, JS::MutableHandleValue outVal, const char *filename, JSContext* cx, JS::HandleObject global)
 {
+    cocos2d::log("ScriptingCore::evalString 2017-03-17");
+    JSAutoCompartment ac(cx, global);
+    return JS_EvaluateScript(cx, global, string, (unsigned)strlen(string), "ScriptingCore::evalString", 1, outVal);
+    /*
     JSAutoCompartment ac(cx, global);
     JS::PersistentRootedScript script(cx);
     if (script == nullptr) {
@@ -547,6 +551,7 @@ bool ScriptingCore::evalString(const char *string, JS::MutableHandleValue outVal
         cocos2d::log("ScriptingCore:: evaluateScript fail: %s", content.c_str());
     }
     return evaluatedOK;
+     */
 }
 
 bool ScriptingCore::evalString(const char *string, JS::MutableHandleValue outVal)

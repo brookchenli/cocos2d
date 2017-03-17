@@ -5671,6 +5671,23 @@
 		B6DD2FF61B04825B00E47F5F /* fastlz.c in Sources */ = {isa = PBXBuildFile; fileRef = B6DD2FA51B04825B00E47F5F /* fastlz.c */; };
 		B6DD2FF71B04825B00E47F5F /* fastlz.h in Headers */ = {isa = PBXBuildFile; fileRef = B6DD2FA61B04825B00E47F5F /* fastlz.h */; };
 		B6DD2FF81B04825B00E47F5F /* fastlz.h in Headers */ = {isa = PBXBuildFile; fileRef = B6DD2FA61B04825B00E47F5F /* fastlz.h */; };
+		BC6295941E7BB1DC00F45634 /* CocosDelegate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BC62958C1E7BB1DC00F45634 /* CocosDelegate.cpp */; };
+		BC6295951E7BB1DC00F45634 /* CocosDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = BC62958D1E7BB1DC00F45634 /* CocosDelegate.h */; };
+		BC6295961E7BB1DC00F45634 /* CocosManager.h in Headers */ = {isa = PBXBuildFile; fileRef = BC62958E1E7BB1DC00F45634 /* CocosManager.h */; };
+		BC6295971E7BB1DC00F45634 /* CocosManager.mm in Sources */ = {isa = PBXBuildFile; fileRef = BC62958F1E7BB1DC00F45634 /* CocosManager.mm */; };
+		BC6295981E7BB1DC00F45634 /* CppAdapter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BC6295901E7BB1DC00F45634 /* CppAdapter.cpp */; };
+		BC6295991E7BB1DC00F45634 /* CppAdapter.h in Headers */ = {isa = PBXBuildFile; fileRef = BC6295911E7BB1DC00F45634 /* CppAdapter.h */; };
+		BC62959A1E7BB1DC00F45634 /* GameViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = BC6295921E7BB1DC00F45634 /* GameViewController.h */; };
+		BC62959B1E7BB1DC00F45634 /* GameViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = BC6295931E7BB1DC00F45634 /* GameViewController.mm */; };
+		BC62959C1E7BB1E600F45634 /* CocosDelegate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BC62958C1E7BB1DC00F45634 /* CocosDelegate.cpp */; };
+		BC62959D1E7BB1E900F45634 /* CocosManager.mm in Sources */ = {isa = PBXBuildFile; fileRef = BC62958F1E7BB1DC00F45634 /* CocosManager.mm */; };
+		BC62959E1E7BB20000F45634 /* CppAdapter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BC6295901E7BB1DC00F45634 /* CppAdapter.cpp */; };
+		BC62959F1E7BB20200F45634 /* GameViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = BC6295931E7BB1DC00F45634 /* GameViewController.mm */; };
+		BC6295A01E7BB20C00F45634 /* CocosManager.h in Headers */ = {isa = PBXBuildFile; fileRef = BC62958E1E7BB1DC00F45634 /* CocosManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BC6295A11E7BB3B600F45634 /* CocosDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = BC62958D1E7BB1DC00F45634 /* CocosDelegate.h */; };
+		BC6295A21E7BB3BC00F45634 /* CppAdapter.h in Headers */ = {isa = PBXBuildFile; fileRef = BC6295911E7BB1DC00F45634 /* CppAdapter.h */; };
+		BC6295A31E7BB3BF00F45634 /* GameViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = BC6295921E7BB1DC00F45634 /* GameViewController.h */; };
+		BC6295A51E7BB82B00F45634 /* libjscocos2d iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BC6295A41E7BB82B00F45634 /* libjscocos2d iOS.a */; };
 		C50306691B60B583001E6D43 /* CCBoneNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C50306631B60B583001E6D43 /* CCBoneNode.cpp */; };
 		C503066A1B60B583001E6D43 /* CCBoneNode.h in Headers */ = {isa = PBXBuildFile; fileRef = C50306641B60B583001E6D43 /* CCBoneNode.h */; };
 		C503066B1B60B583001E6D43 /* CCSkeletonNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C50306651B60B583001E6D43 /* CCSkeletonNode.cpp */; };
@@ -7729,6 +7746,15 @@
 		B6DD2FA31B04825B00E47F5F /* DetourTileCacheBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetourTileCacheBuilder.h; sourceTree = "<group>"; };
 		B6DD2FA51B04825B00E47F5F /* fastlz.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = fastlz.c; sourceTree = "<group>"; };
 		B6DD2FA61B04825B00E47F5F /* fastlz.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fastlz.h; sourceTree = "<group>"; };
+		BC62958C1E7BB1DC00F45634 /* CocosDelegate.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CocosDelegate.cpp; sourceTree = "<group>"; };
+		BC62958D1E7BB1DC00F45634 /* CocosDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CocosDelegate.h; sourceTree = "<group>"; };
+		BC62958E1E7BB1DC00F45634 /* CocosManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CocosManager.h; sourceTree = "<group>"; };
+		BC62958F1E7BB1DC00F45634 /* CocosManager.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CocosManager.mm; sourceTree = "<group>"; };
+		BC6295901E7BB1DC00F45634 /* CppAdapter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CppAdapter.cpp; sourceTree = "<group>"; };
+		BC6295911E7BB1DC00F45634 /* CppAdapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CppAdapter.h; sourceTree = "<group>"; };
+		BC6295921E7BB1DC00F45634 /* GameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameViewController.h; sourceTree = "<group>"; };
+		BC6295931E7BB1DC00F45634 /* GameViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = GameViewController.mm; sourceTree = "<group>"; };
+		BC6295A41E7BB82B00F45634 /* libjscocos2d iOS.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libjscocos2d iOS.a"; sourceTree = "<group>"; };
 		C50306631B60B583001E6D43 /* CCBoneNode.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CCBoneNode.cpp; sourceTree = "<group>"; };
 		C50306641B60B583001E6D43 /* CCBoneNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCBoneNode.h; sourceTree = "<group>"; };
 		C50306651B60B583001E6D43 /* CCSkeletonNode.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CCSkeletonNode.cpp; sourceTree = "<group>"; };
@@ -7817,6 +7843,7 @@
 				1A570364180BD1120088DEC7 /* libpng.a in Frameworks */,
 				1A570378180BD1B40088DEC7 /* libjpeg.a in Frameworks */,
 				1A5703A4180BD2350088DEC7 /* libtiff.a in Frameworks */,
+				BC6295A51E7BB82B00F45634 /* libjscocos2d iOS.a in Frameworks */,
 				292F1A5D1A5151CE00E479F8 /* libcrypto.a in Frameworks */,
 				29031E0919BFE8DE00EFA1DF /* libchipmunk.a in Frameworks */,
 				1A5703BB180BD2800088DEC7 /* libwebp.a in Frameworks */,
@@ -7860,6 +7887,8 @@
 		1551A334158F2AB200E66CFE = {
 			isa = PBXGroup;
 			children = (
+				BC6295A41E7BB82B00F45634 /* libjscocos2d iOS.a */,
+				BC62958B1E7BB1DC00F45634 /* Classes */,
 				46A15FCC1807A544005B8026 /* AUTHORS */,
 				1A57FFF7180BC5160088DEC7 /* CHANGELOG */,
 				50272539190BF1B900AAF4ED /* cocos2d.cpp */,
@@ -11283,6 +11312,21 @@
 			path = ../external/recast/fastlz;
 			sourceTree = "<group>";
 		};
+		BC62958B1E7BB1DC00F45634 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				BC62958C1E7BB1DC00F45634 /* CocosDelegate.cpp */,
+				BC62958D1E7BB1DC00F45634 /* CocosDelegate.h */,
+				BC62958E1E7BB1DC00F45634 /* CocosManager.h */,
+				BC62958F1E7BB1DC00F45634 /* CocosManager.mm */,
+				BC6295901E7BB1DC00F45634 /* CppAdapter.cpp */,
+				BC6295911E7BB1DC00F45634 /* CppAdapter.h */,
+				BC6295921E7BB1DC00F45634 /* GameViewController.h */,
+				BC6295931E7BB1DC00F45634 /* GameViewController.mm */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
 		C50306621B60B56C001E6D43 /* Skeleton */ = {
 			isa = PBXGroup;
 			children = (
@@ -11345,6 +11389,10 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC6295A01E7BB20C00F45634 /* CocosManager.h in Headers */,
+				BC6295A31E7BB3BF00F45634 /* GameViewController.h in Headers */,
+				BC6295A21E7BB3BC00F45634 /* CppAdapter.h in Headers */,
+				BC6295A11E7BB3B600F45634 /* CocosDelegate.h in Headers */,
 				50ABBE9B1925AB6F00A911A9 /* CCRef.h in Headers */,
 				50ABBE851925AB6F00A911A9 /* ccFPSImages.h in Headers */,
 				B665E2701AA80A6500DDB1C5 /* CCPUDoFreezeEventHandlerTranslator.h in Headers */,
@@ -13458,6 +13506,7 @@
 				B6CAB3221AF9AA1A00B9B856 /* btGenericPoolAllocator.h in Headers */,
 				B665E3851AA80A6500DDB1C5 /* CCPUPathFollower.h in Headers */,
 				2980F0291BA9A5550059E678 /* UITextField+CCUITextInput.h in Headers */,
+				BC6295961E7BB1DC00F45634 /* CocosManager.h in Headers */,
 				46A170FF1807CECB005B8026 /* CCPhysicsContact.h in Headers */,
 				B6CAB37E1AF9AA1A00B9B856 /* btGjkPairDetector.h in Headers */,
 				B6CAB3101AF9AA1A00B9B856 /* btTriangleShape.h in Headers */,
@@ -13979,6 +14028,7 @@
 				B6CAB1F41AF9AA1A00B9B856 /* btCollisionAlgorithm.h in Headers */,
 				382384241A2590DA002C4610 /* GameMapReader.h in Headers */,
 				B6DD2FDC1B04825B00E47F5F /* DetourLocalBoundary.h in Headers */,
+				BC62959A1E7BB1DC00F45634 /* GameViewController.h in Headers */,
 				15AE1ABD19AAD40300C27E9E /* b2PolygonAndCircleContact.h in Headers */,
 				15AE1AA819AAD40300C27E9E /* b2Island.h in Headers */,
 				B665E2391AA80A6500DDB1C5 /* CCPUBoxEmitterTranslator.h in Headers */,
@@ -14121,6 +14171,7 @@
 				15B3707F19EE414C00ABE682 /* CCEventAssetsManagerEx.h in Headers */,
 				1AC0269D1914068200FA920D /* ConvertUTF.h in Headers */,
 				15AE1A4419AAD3D500C27E9E /* b2DynamicTree.h in Headers */,
+				BC6295951E7BB1DC00F45634 /* CocosDelegate.h in Headers */,
 				507003241B69735300E83DDD /* HttpConnection-winrt.h in Headers */,
 				1A5702FD180BCE750088DEC7 /* CCTMXXMLParser.h in Headers */,
 				B665E3B11AA80A6500DDB1C5 /* CCPURender.h in Headers */,
@@ -14436,6 +14487,7 @@
 				50864CEB1C7BC90A00B3BAB1 /* cpCompat62.h in Headers */,
 				15AE18B319AAD33D00C27E9E /* CCBReader.h in Headers */,
 				15AE18D219AAD33D00C27E9E /* CCNodeLoaderListener.h in Headers */,
+				BC6295991E7BB1DC00F45634 /* CppAdapter.h in Headers */,
 				15AE184D19AAD30800C27E9E /* SimpleAudioEngine.h in Headers */,
 				B665E3551AA80A6500DDB1C5 /* CCPUOnQuotaObserver.h in Headers */,
 				B677B0D01B18492D006762CB /* CCNavMeshAgent.h in Headers */,
@@ -14587,6 +14639,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC62959F1E7BB20200F45634 /* GameViewController.mm in Sources */,
+				BC62959E1E7BB20000F45634 /* CppAdapter.cpp in Sources */,
+				BC62959D1E7BB1E900F45634 /* CocosManager.mm in Sources */,
+				BC62959C1E7BB1E600F45634 /* CocosDelegate.cpp in Sources */,
 				15AE1A9019AAD40300C27E9E /* b2WeldJoint.cpp in Sources */,
 				50ABBE2B1925AB6F00A911A9 /* ccCArray.cpp in Sources */,
 				382383F41A258FA7002C4610 /* idl_gen_cpp.cpp in Sources */,
@@ -16492,6 +16548,7 @@
 				B6CAB3261AF9AA1A00B9B856 /* btGImpactBvh.cpp in Sources */,
 				15AE18B919AAD33D00C27E9E /* CCControlButtonLoader.cpp in Sources */,
 				B6CAB4041AF9AA1A00B9B856 /* btMultiBodyDynamicsWorld.cpp in Sources */,
+				BC6295971E7BB1DC00F45634 /* CocosManager.mm in Sources */,
 				50ABBE761925AB6F00A911A9 /* CCEventListenerTouch.cpp in Sources */,
 				15AE1AD219AAD40300C27E9E /* b2RopeJoint.cpp in Sources */,
 				B6DD2FEE1B04825B00E47F5F /* DetourTileCache.cpp in Sources */,
@@ -16662,6 +16719,7 @@
 				1A087AE91860400400196EF5 /* edtaa3func.cpp in Sources */,
 				B665E33F1AA80A6500DDB1C5 /* CCPUOnEventFlagObserverTranslator.cpp in Sources */,
 				15AE194219AAD35100C27E9E /* CCColliderDetector.cpp in Sources */,
+				BC6295941E7BB1DC00F45634 /* CocosDelegate.cpp in Sources */,
 				B6CAB37C1AF9AA1A00B9B856 /* btGjkPairDetector.cpp in Sources */,
 				15AE1A9919AAD40300C27E9E /* b2Math.cpp in Sources */,
 				B6CAB2621AF9AA1A00B9B856 /* btManifoldResult.cpp in Sources */,
@@ -16727,7 +16785,9 @@
 				1A5701FC180BCBAD0088DEC7 /* CCMenuItem.cpp in Sources */,
 				505385051B01887A00793096 /* CCProperties.cpp in Sources */,
 				B6CAB4201AF9AA1A00B9B856 /* btMLCPSolver.cpp in Sources */,
+				BC6295981E7BB1DC00F45634 /* CppAdapter.cpp in Sources */,
 				B665E2A71AA80A6500DDB1C5 /* CCPUEventHandlerTranslator.cpp in Sources */,
+				BC62959B1E7BB1DC00F45634 /* GameViewController.mm in Sources */,
 				B6CAB4341AF9AA1A00B9B856 /* btGpu3DGridBroadphase.cpp in Sources */,
 				15AE195119AAD35100C27E9E /* CCDecorativeDisplay.cpp in Sources */,
 				15AE19BA19AAD39700C27E9E /* TextReader.cpp in Sources */,
@@ -17260,10 +17320,11 @@
 					"\"$(SRCROOT)/../external/chipmunk/prebuilt/mac\"",
 					"\"$(SRCROOT)/../external/curl/prebuilt/mac\"",
 					"\"$(SRCROOT)/../external/zlib/prebuilt/mac\"",
+					"$(PROJECT_DIR)",
 				);
 				MACH_O_TYPE = staticlib;
 				OTHER_LDFLAGS = "-llibsql3";
-				USER_HEADER_SEARCH_PATHS = "$(inherited) $(SRCROOT)/../external/png/include/mac $(SRCROOT)/../external/tiff/include/mac $(SRCROOT)/../external/webp/include/mac $(SRCROOT)/../external/jpeg/include/mac $(SRCROOT)/../external/freetype2/include/mac $(SRCROOT)/../external/glfw3/include/mac $(SRCROOT)/../external/websockets/include/mac $(SRCROOT)/../external/curl/include/mac $(SRCROOT)/../external/freetype2/include/mac/freetype2";
+				USER_HEADER_SEARCH_PATHS = "$(inherited) $(SRCROOT)/../external/png/include/mac $(SRCROOT)/../external/tiff/include/mac $(SRCROOT)/../external/webp/include/mac $(SRCROOT)/../external/jpeg/include/mac $(SRCROOT)/../external/freetype2/include/mac $(SRCROOT)/../external/glfw3/include/mac $(SRCROOT)/../external/websockets/include/mac $(SRCROOT)/../external/curl/include/mac $(SRCROOT)/../external/freetype2/include/mac/freetype2 $(SRCROOT)/../cocos/scripting/js-bindings/auto $(SRCROOT)/../external/spidermonkey/include/ios $(SRCROOT)/../cocos/scripting/js-bindings/manual $(SRCROOT)/../cocos/platform/ios";
 			};
 			name = Debug;
 		};
@@ -17297,10 +17358,11 @@
 					"\"$(SRCROOT)/../external/chipmunk/prebuilt/mac\"",
 					"\"$(SRCROOT)/../external/curl/prebuilt/mac\"",
 					"\"$(SRCROOT)/../external/zlib/prebuilt/mac\"",
+					"$(PROJECT_DIR)",
 				);
 				MACH_O_TYPE = staticlib;
 				OTHER_LDFLAGS = "-llibsql3";
-				USER_HEADER_SEARCH_PATHS = "$(inherited) $(SRCROOT)/../external/png/include/mac $(SRCROOT)/../external/tiff/include/mac $(SRCROOT)/../external/webp/include/mac $(SRCROOT)/../external/jpeg/include/mac $(SRCROOT)/../external/freetype2/include/mac $(SRCROOT)/../external/glfw3/include/mac $(SRCROOT)/../external/websockets/include/mac $(SRCROOT)/../external/curl/include/mac $(SRCROOT)/../external/freetype2/include/mac/freetype2";
+				USER_HEADER_SEARCH_PATHS = "$(inherited) $(SRCROOT)/../external/png/include/mac $(SRCROOT)/../external/tiff/include/mac $(SRCROOT)/../external/webp/include/mac $(SRCROOT)/../external/jpeg/include/mac $(SRCROOT)/../external/freetype2/include/mac $(SRCROOT)/../external/glfw3/include/mac $(SRCROOT)/../external/websockets/include/mac $(SRCROOT)/../external/curl/include/mac $(SRCROOT)/../external/freetype2/include/mac/freetype2 $(SRCROOT)/../cocos/scripting/js-bindings/auto $(SRCROOT)/../external/spidermonkey/include/ios $(SRCROOT)/../cocos/scripting/js-bindings/manual $(SRCROOT)/../cocos/platform/ios";
 			};
 			name = Release;
 		};
@@ -17391,11 +17453,12 @@
 					"\"$(SRCROOT)/../external/curl/prebuilt/ios\"",
 					"\"$(SRCROOT)/../external/websockets/prebuilt/ios\"",
 					"\"$(SRCROOT)/../external/chipmunk/prebuilt/ios\"",
+					"$(PROJECT_DIR)",
 				);
 				OTHER_LDFLAGS = "-llibsql3";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				USER_HEADER_SEARCH_PATHS = "$(inherited) $(SRCROOT)/../external/freetype2/include/ios $(SRCROOT)/../external/curl/include/ios $(SRCROOT)/../external/webp/include/ios $(SRCROOT)/../external/tiff/include/ios $(SRCROOT)/../external/jpeg/include/ios $(SRCROOT)/../external/png/include/ios $(SRCROOT)/../external/websockets/include/ios $(SRCROOT)/../external/freetype2/include/ios/freetype2";
+				USER_HEADER_SEARCH_PATHS = "$(inherited) $(SRCROOT)/../external/freetype2/include/ios $(SRCROOT)/../external/curl/include/ios $(SRCROOT)/../external/webp/include/ios $(SRCROOT)/../external/tiff/include/ios $(SRCROOT)/../external/jpeg/include/ios $(SRCROOT)/../external/png/include/ios $(SRCROOT)/../external/websockets/include/ios $(SRCROOT)/../external/freetype2/include/ios/freetype2 $(SRCROOT)/../cocos/scripting/js-bindings/auto $(SRCROOT)/../external/spidermonkey/include/ios $(SRCROOT)/../cocos/scripting/js-bindings/manual $(SRCROOT)/../cocos/platform/ios";
 				VALID_ARCHS = "arm64 armv7";
 			};
 			name = Debug;
@@ -17425,11 +17488,12 @@
 					"\"$(SRCROOT)/../external/curl/prebuilt/ios\"",
 					"\"$(SRCROOT)/../external/websockets/prebuilt/ios\"",
 					"\"$(SRCROOT)/../external/chipmunk/prebuilt/ios\"",
+					"$(PROJECT_DIR)",
 				);
 				OTHER_LDFLAGS = "-llibsql3";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				USER_HEADER_SEARCH_PATHS = "$(inherited) $(SRCROOT)/../external/freetype2/include/ios $(SRCROOT)/../external/curl/include/ios $(SRCROOT)/../external/webp/include/ios $(SRCROOT)/../external/tiff/include/ios $(SRCROOT)/../external/jpeg/include/ios $(SRCROOT)/../external/png/include/ios $(SRCROOT)/../external/websockets/include/ios $(SRCROOT)/../external/freetype2/include/ios/freetype2";
+				USER_HEADER_SEARCH_PATHS = "$(inherited) $(SRCROOT)/../external/freetype2/include/ios $(SRCROOT)/../external/curl/include/ios $(SRCROOT)/../external/webp/include/ios $(SRCROOT)/../external/tiff/include/ios $(SRCROOT)/../external/jpeg/include/ios $(SRCROOT)/../external/png/include/ios $(SRCROOT)/../external/websockets/include/ios $(SRCROOT)/../external/freetype2/include/ios/freetype2 $(SRCROOT)/../cocos/scripting/js-bindings/auto $(SRCROOT)/../external/spidermonkey/include/ios $(SRCROOT)/../cocos/scripting/js-bindings/manual $(SRCROOT)/../cocos/platform/ios";
 				VALID_ARCHS = "arm64 armv7";
 			};
 			name = Release;

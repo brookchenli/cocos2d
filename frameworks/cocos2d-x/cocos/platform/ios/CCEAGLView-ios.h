@@ -104,6 +104,9 @@ Copyright (C) 2008 Apple Inc. All Rights Reserved.
     BOOL                    isKeyboardShown_;
 }
 
+@property (nonatomic, assign)CGRect m_notAllowedTouchRect; //不可点击区域
+@property (nonatomic, assign)BOOL m_allowedThrough; //是否穿透
+
 @property(nonatomic, readonly) UITextPosition *beginningOfDocument;
 @property(nonatomic, readonly) UITextPosition *endOfDocument;
 @property(nonatomic, assign) id<UITextInputDelegate> inputDelegate;
