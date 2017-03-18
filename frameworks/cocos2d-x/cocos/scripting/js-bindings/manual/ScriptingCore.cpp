@@ -637,7 +637,7 @@ void ScriptingCore::createGlobalContext() {
     }
 
     if(!ifFirst){//!!!!!!!ADD THIS 添加这个初始化
-       // initRegister();
+        initRegister();
     }
     
     // Removed from Spidermonkey 19.
