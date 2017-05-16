@@ -31,6 +31,8 @@
 //显示或者隐藏游戏界面
 -(void)enterCocosGameScene:(NSString*) userKey withRoomId:(int) roomId;
 
+-(void) runCocosZipForName:(NSString*) zipName;
+
 //移除cocos游戏界面，关闭游戏窗口或切换主播房间的时候调用
 -(void)removeCocosGameLayer;
 

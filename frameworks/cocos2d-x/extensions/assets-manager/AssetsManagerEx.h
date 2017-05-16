@@ -108,6 +108,8 @@ public:
      */
     const Manifest* getRemoteManifest() const;
     
+    bool decompressLocalZip(const std::string &filename);
+
 CC_CONSTRUCTOR_ACCESS:
     
     AssetsManagerEx(const std::string& manifestUrl, const std::string& storagePath);

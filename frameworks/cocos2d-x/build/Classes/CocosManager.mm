@@ -38,6 +38,8 @@
 #include "physics3d/jsb_cocos2dx_physics3d_manual.h"
 #include "jsb_cocos2dx_navmesh_auto.hpp"
 #include "navmesh/jsb_cocos2dx_navmesh_manual.h"
+#include "assets-manager/AssetsManagerEx.h"
+#include "CCFileUtils.h"
 
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID || CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
 #include "jsb_cocos2dx_experimental_video_auto.hpp"
@@ -85,7 +87,7 @@ static CocosManager *instance = nullptr;
     cocos2d::GLViewImpl::convertAttrs();
     
     // Add the view controller's view to the window and display.
-    self.m_eaglView = [CCEAGLView viewWithFrame:[[UIScreen mainScreen] bounds]
+    self.m_eaglView = [CCEAGLView viewWithFrame:CGRectMake(0, 0, screenHeight, screenWidth)
                                     pixelFormat: kEAGLColorFormatRGBA8
                                     depthFormat: GL_DEPTH24_STENCIL8_OES
                              preserveBackbuffer: NO
@@ -103,7 +105,7 @@ static CocosManager *instance = nullptr;
     //[testUIView addSubview:tempGameView];
     
     //设置cocos游戏层不可穿透区域
-    CGRect notAllowedTouchRect = CGRectMake(0, screenHeight - blankHeight - gameHeight, screenWidth, gameHeight);
+    CGRect notAllowedTouchRect = CGRectZero;//CGRectMake(0, screenHeight - blankHeight - gameHeight, screenWidth, gameHeight);
     self.m_eaglView.m_notAllowedTouchRect = notAllowedTouchRect;
     
     [self.m_eaglView setMultipleTouchEnabled:NO];
@@ -151,6 +153,25 @@ static CocosManager *instance = nullptr;
 //    NSLog(@"jsCallStr = %s", jsCallStr.c_str());
 //    ScriptingCore::getInstance()->evalString(jsCallStr.c_str());
 }
+
+-(void) runCocosZipForName:(NSString*) zipName
+{
+    std::string zipNameStr = [zipName UTF8String];
+    
+    NSLog(@"CocosManager runCocosZipForName zipName = %s",zipNameStr.c_str());
+    
+    std::string writablePath = cocos2d::FileUtils::getInstance()->getWritablePath();
+    cocos2d::FileUtils::getInstance()->addSearchPath(writablePath);
+    
+    cocos2d::extension::AssetsManagerEx* assetsManagerEx = new cocos2d::extension::AssetsManagerEx("test","test");
+    bool isSucceed = assetsManagerEx->decompressLocalZip([zipName UTF8String]);
+    
+    if (isSucceed) {
+        NSLog(@"applicationDidFinishLaunching isSucceed isSucceed");
+        ScriptingCore::getInstance()->runScript("main.js");
+    }
+}
+
 
 -(void)callJsEngineCallBack:(NSString*) funcNameStr withCmd:(NSString*) cmdStr withContent:(NSString*) contentStr
 {

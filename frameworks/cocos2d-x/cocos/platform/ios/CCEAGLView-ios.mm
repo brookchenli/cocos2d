@@ -414,6 +414,7 @@ Copyright (C) 2008 Apple Inc. All Rights Reserved.
     }
 
     auto glview = cocos2d::Director::getInstance()->getOpenGLView();
+    NSLog(@"touches Began");
     glview->handleTouchesBegin(i, (intptr_t*)ids, xs, ys);
 }
 
@@ -478,6 +479,12 @@ Copyright (C) 2008 Apple Inc. All Rights Reserved.
 
     auto glview = cocos2d::Director::getInstance()->getOpenGLView();
     glview->handleTouchesCancel(i, (intptr_t*)ids, xs, ys);
+}
+
+-(UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event{
+    [super hitTest:point withEvent:event];
+    NSLog(@"hitTest %f %f", point.x, point.y);
+    return self;
 }
 
 #pragma mark - UIView - Responder
