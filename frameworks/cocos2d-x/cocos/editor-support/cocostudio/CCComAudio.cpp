@@ -35,6 +35,7 @@ const std::string ComAudio::COMPONENT_NAME = "CCComAudio";
 ComAudio::ComAudio()
 : _filePath("")
 , _loop(false)
+, _loop2(false)
 , _startedSoundId(0)
 {
     _name = COMPONENT_NAME;
@@ -57,7 +58,8 @@ void ComAudio::onEnter()
 void ComAudio::onExit()
 {
     stopBackgroundMusic(true);
-    stopAllEffects();
+     stopBackgroundMusic2(true);
+   stopAllEffects();
 }
 
 void ComAudio::onAdd()
@@ -67,6 +69,7 @@ void ComAudio::onAdd()
 void ComAudio::onRemove()
 {
     stopBackgroundMusic(true);
+    stopBackgroundMusic2(true);
     stopAllEffects();
 }
 
@@ -235,6 +238,73 @@ void ComAudio::setBackgroundMusicVolume(float volume)
     CocosDenshion::SimpleAudioEngine::getInstance()->setBackgroundMusicVolume(volume);
 }
 
+void ComAudio::preloadBackgroundMusic2(const char* pszFilePath)
+{
+    CocosDenshion::SimpleAudioEngine::getInstance()->preloadBackgroundMusic2(pszFilePath);
+    setFile(pszFilePath);
+	setLoop(false);
+}
+
+void ComAudio::playBackgroundMusic2(const char* pszFilePath, bool loop)
+{
+    CocosDenshion::SimpleAudioEngine::getInstance()->playBackgroundMusic2(pszFilePath, loop);
+    
+}
+
+void ComAudio::playBackgroundMusic2(const char* pszFilePath)
+{
+    CocosDenshion::SimpleAudioEngine::getInstance()->playBackgroundMusic2(pszFilePath);
+}
+
+void ComAudio::playBackgroundMusic2()
+{
+    CocosDenshion::SimpleAudioEngine::getInstance()->playBackgroundMusic2(_filePath.c_str(), _loop2);
+}
+
+void ComAudio::stopBackgroundMusic2(bool bReleaseData)
+{
+    CocosDenshion::SimpleAudioEngine::getInstance()->stopBackgroundMusic2(bReleaseData);
+}
+
+void ComAudio::stopBackgroundMusic2()
+{
+    CocosDenshion::SimpleAudioEngine::getInstance()->stopBackgroundMusic2();
+}
+
+void ComAudio::pauseBackgroundMusic2()
+{
+    CocosDenshion::SimpleAudioEngine::getInstance()->pauseBackgroundMusic2();
+}
+
+void ComAudio::resumeBackgroundMusic2()
+{
+    CocosDenshion::SimpleAudioEngine::getInstance()->resumeBackgroundMusic2();
+}
+
+void ComAudio::rewindBackgroundMusic2()
+{
+    CocosDenshion::SimpleAudioEngine::getInstance()->rewindBackgroundMusic2();
+}
+
+bool ComAudio::willPlayBackgroundMusic2()
+{
+    return CocosDenshion::SimpleAudioEngine::getInstance()->willPlayBackgroundMusic2();
+}
+
+bool ComAudio::isBackgroundMusicPlaying2()
+{
+    return CocosDenshion::SimpleAudioEngine::getInstance()->isBackgroundMusicPlaying2();
+}
+
+float ComAudio::getBackgroundMusicVolume2()
+{
+    return CocosDenshion::SimpleAudioEngine::getInstance()->getBackgroundMusicVolume2();
+}
+
+void ComAudio::setBackgroundMusicVolume2(float volume)
+{
+    CocosDenshion::SimpleAudioEngine::getInstance()->setBackgroundMusicVolume2(volume);
+}
 float ComAudio::getEffectsVolume()
 {
     return CocosDenshion::SimpleAudioEngine::getInstance()->getEffectsVolume();
@@ -312,6 +382,11 @@ void ComAudio::setLoop(bool loop)
 	_loop = loop;
 }
 
+void ComAudio::setLoop2(bool loop)
+{
+	_loop2 = loop;
+}
+
 const char* ComAudio::getFile()
 {
 	return _filePath.c_str();
@@ -320,6 +395,10 @@ const char* ComAudio::getFile()
 bool ComAudio::isLoop()
 {
 	return _loop;
+}
+bool ComAudio::isLoop2()
+{
+	return _loop2;
 }
 
 void ComAudio::start()

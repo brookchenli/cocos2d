@@ -164,6 +164,94 @@ public:
      */
     virtual void setBackgroundMusicVolume(float volume);
 
+
+  /**
+     * Preload background music2.
+     *
+     * @param filePath The path of the background music file.
+     * @js NA
+     * @lua preloadMusic
+     */
+    virtual void preloadBackgroundMusic2(const char* filePath);
+    
+    /**
+     * Play background music2.
+     * 
+     * @param filePath The path of the background music file,or the FileName of T_SoundResInfo.
+     * @param loop Whether the background music loop or not.
+     * @js playMusic
+     * @lua playMusic
+     */
+    virtual void playBackgroundMusic2(const char* filePath, bool loop = false);
+
+    /**
+     * Stop playing background music.
+     *
+     * @param releaseData If release the background music data or not.As default value is false.
+     * @js stopMusic
+     * @lua stopMusic
+     */
+    virtual void stopBackgroundMusic2(bool releaseData = false);
+
+    /**
+     * Pause playing background music2.
+     * @js pauseMusic
+     * @lua pauseMusic
+     */
+    virtual void pauseBackgroundMusic2();
+
+    /**
+     * Resume playing background music2.
+     * @js resumeMusic
+     * @lua resumeMusic
+     */
+    virtual void resumeBackgroundMusic2();
+
+    /**
+     * Rewind playing background music2.
+     * @js rewindMusic
+     * @lua rewindMusic
+     */
+    virtual void rewindBackgroundMusic2();
+
+    /**
+     * Indicates whether any background music2 can be played or not.
+     *
+     * @return <i>true</i> if background music can be played, otherwise <i>false</i>.
+     * @js willPlayMusic
+     * @lua willPlayMusic
+     */
+    virtual bool willPlayBackgroundMusic2();
+
+    /**
+     * Indicates whether the background music2 is playing.
+     *
+     * @return <i>true</i> if the background music is playing, otherwise <i>false</i>.
+     * @js isMusicPlaying
+     * @lua isMusicPlaying
+     */
+    virtual bool isBackgroundMusicPlaying2();
+
+    // 
+    // properties
+    //
+
+    /**
+     * The volume of the background music2 within the range of 0.0 as the minimum and 1.0 as the maximum.
+     * @js getMusicVolume
+     * @lua getMusicVolume
+     */
+    virtual float getBackgroundMusicVolume2();
+
+    /**
+     * Set the volume of background music2.
+     *
+     * @param volume must be within the range of 0.0 as the minimum and 1.0 as the maximum.
+     * @js setMusicVolume
+     * @lua setMusicVolume
+     */
+    virtual void setBackgroundMusicVolume2(float volume);	
+
     /**
      * The volume of the effects within the range of 0.0 as the minimum and 1.0 as the maximum.
      */

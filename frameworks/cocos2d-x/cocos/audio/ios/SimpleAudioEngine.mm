@@ -239,6 +239,33 @@ void SimpleAudioEngine::setEffectsVolume(float volume)
     static_setEffectsVolume(volume);
 }
 
+void SimpleAudioEngine::preloadBackgroundMusic2(const char* filePath){
+    
+}
+void SimpleAudioEngine::playBackgroundMusic2(const char* filePath, bool loop){
+    
+}
+void SimpleAudioEngine::stopBackgroundMusic2(bool releaseData){
+}
+void SimpleAudioEngine::pauseBackgroundMusic2(){
+}
+void SimpleAudioEngine::resumeBackgroundMusic2(){
+}
+void SimpleAudioEngine::rewindBackgroundMusic2(){
+}
+bool SimpleAudioEngine::willPlayBackgroundMusic2(){
+    return YES;
+}
+bool SimpleAudioEngine::isBackgroundMusicPlaying2(){
+    return YES;
+}
+float SimpleAudioEngine::getBackgroundMusicVolume2(){
+    return 1;
+}
+void SimpleAudioEngine::setBackgroundMusicVolume2(float volume){
+    
+}
+    
 unsigned int SimpleAudioEngine::playEffect(const char *pszFilePath, bool bLoop,
                                            float pitch, float pan, float gain)
 {

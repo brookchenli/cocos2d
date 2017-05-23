@@ -92,6 +92,20 @@ public:
     bool isBackgroundMusicPlaying();
     float getBackgroundMusicVolume();
     void setBackgroundMusicVolume(float volume);
+	
+     void preloadBackgroundMusic2(const char* pszFilePath);
+    void playBackgroundMusic2(const char* pszFilePath, bool bLoop);
+    void playBackgroundMusic2(const char* pszFilePath);
+    void playBackgroundMusic2();
+    void stopBackgroundMusic2(bool bReleaseData);
+    void stopBackgroundMusic2();
+    void pauseBackgroundMusic2();
+    void resumeBackgroundMusic2();
+    void rewindBackgroundMusic2();
+    bool willPlayBackgroundMusic2();
+    bool isBackgroundMusicPlaying2();
+    float getBackgroundMusicVolume2();
+    void setBackgroundMusicVolume2(float volume);  
     float getEffectsVolume();
     void setEffectsVolume(float volume);
     unsigned int playEffect(const char* pszFilePath, bool bLoop);
@@ -109,6 +123,8 @@ public:
     const char* getFile();
     void setLoop(bool bLoop);
     bool isLoop();
+    void setLoop2(bool bLoop);
+    bool isLoop2();
     
     /// @{
     /// @name implement Playable Protocol
@@ -121,6 +137,7 @@ public:
 private:
     std::string _filePath;
     bool _loop;
+    bool _loop2;
 
     unsigned int _startedSoundId; // !playing sound id from start(), not playEffect
 };

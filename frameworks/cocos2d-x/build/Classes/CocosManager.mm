@@ -87,7 +87,7 @@ static CocosManager *instance = nullptr;
     cocos2d::GLViewImpl::convertAttrs();
     
     // Add the view controller's view to the window and display.
-    self.m_eaglView = [CCEAGLView viewWithFrame:CGRectMake(0, 0, screenHeight, screenWidth)
+    self.m_eaglView = [CCEAGLView viewWithFrame: CGRectMake(0, 0, screenHeight, screenWidth)
                                     pixelFormat: kEAGLColorFormatRGBA8
                                     depthFormat: GL_DEPTH24_STENCIL8_OES
                              preserveBackbuffer: NO
@@ -105,7 +105,8 @@ static CocosManager *instance = nullptr;
     //[testUIView addSubview:tempGameView];
     
     //设置cocos游戏层不可穿透区域
-    CGRect notAllowedTouchRect = CGRectZero;//CGRectMake(0, screenHeight - blankHeight - gameHeight, screenWidth, gameHeight);
+    //CGRect notAllowedTouchRect = CGRectMake(0, screenHeight - blankHeight - gameHeight, screenWidth, gameHeight);
+    CGRect notAllowedTouchRect = CGRectMake(0, 0, screenHeight, screenWidth);
     self.m_eaglView.m_notAllowedTouchRect = notAllowedTouchRect;
     
     [self.m_eaglView setMultipleTouchEnabled:NO];
@@ -122,7 +123,7 @@ static CocosManager *instance = nullptr;
     cocos2d::Director::getInstance()->setOpenGLView(glview);
     CppAdapter::getInstance()->setCocosIsInit(true);
     //允许触摸穿透cocos层到ios的view
-    self.m_eaglView.m_allowedThrough = YES;
+    self.m_eaglView.m_allowedThrough = NO;
     
     app->run();
     

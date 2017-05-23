@@ -85,8 +85,10 @@ Copyright (C) 2008 Apple Inc. All Rights Reserved.
 - (unsigned int) convertPixelFormat:(NSString*) pixelFormat;
 @end
 
-@implementation CCEAGLView
 
+@implementation CCEAGLView{
+    BOOL b_testHits;
+}
 @synthesize surfaceSize=size_;
 @synthesize pixelFormat=pixelformat_, depthFormat=depthFormat_;
 @synthesize context=context_;
@@ -458,7 +460,7 @@ Copyright (C) 2008 Apple Inc. All Rights Reserved.
         ys[i] = [touch locationInView: [touch view]].y * self.contentScaleFactor;;
         ++i;
     }
-
+    NSLog(@"touches Ended");
     auto glview = cocos2d::Director::getInstance()->getOpenGLView();
     glview->handleTouchesEnd(i, (intptr_t*)ids, xs, ys);
 }
@@ -482,9 +484,36 @@ Copyright (C) 2008 Apple Inc. All Rights Reserved.
 }
 
 -(UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event{
-    [super hitTest:point withEvent:event];
-    NSLog(@"hitTest %f %f", point.x, point.y);
-    return self;
+    if (b_testHits) {
+        return nil;
+    }
+    
+    if (CGRectEqualToRect(self.m_notAllowedTouchRect, CGRectZero)) {
+        return self;
+    }
+    else{
+        //返回Touch操作初始点所在的视图(View),即需要将触摸事件传递给其处理的视图
+        UIView *hitView = [super hitTest:point withEvent:event];
+        if (hitView == self) {
+            b_testHits = YES;
+            
+            CGPoint superPoint = [self.superview convertPoint:point fromView:self];
+            UIView *superHitView = [self.superview hitTest:superPoint withEvent:event];
+            b_testHits = NO;
+            //NSLog(@"CGRectContainsPoint.....x = %f  y = %f",point.x,point.y);
+            //NSLog(@"CGRectContainsPoint.....x = %f  y = %f  width = %f  height = %f",self.m_notAllowedTouchRect.origin.x,self.m_notAllowedTouchRect.origin.y,self.m_notAllowedTouchRect.size.width,self.m_notAllowedTouchRect.size.height);
+            //判断当前点是否在矩形区域内,不在矩形区域内就穿透
+            if (!CGRectContainsPoint(self.m_notAllowedTouchRect, point)) {
+                //NSLog(@"CGRectContainsPoint...");
+                hitView = superHitView;
+            }
+            
+            if(self.m_allowedThrough){
+                hitView = superHitView;
+            }
+        }
+        return hitView;
+    };
 }
 
 #pragma mark - UIView - Responder

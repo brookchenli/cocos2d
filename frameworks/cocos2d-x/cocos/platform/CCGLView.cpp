@@ -294,7 +294,8 @@ void GLView::handleTouchesBegin(int num, intptr_t ids[], float xs[], float ys[])
     float y = 0.0f;
     int unusedIndex = 0;
     EventTouch touchEvent;
-    
+    CCLOG("GLView::handleTouchesBegin i am  here");
+
     for (int i = 0; i < num; ++i)
     {
         id = ids[i];
@@ -330,7 +331,8 @@ void GLView::handleTouchesBegin(int num, intptr_t ids[], float xs[], float ys[])
         CCLOG("touchesBegan: size = 0");
         return;
     }
-    
+    CCLOG("GLView::handleTouchesBegin  end i am  here");
+
     touchEvent._eventCode = EventTouch::EventCode::BEGAN;
     auto dispatcher = Director::getInstance()->getEventDispatcher();
     dispatcher->dispatchEvent(&touchEvent);
@@ -399,7 +401,8 @@ void GLView::handleTouchesOfEndOrCancel(EventTouch::EventCode eventCode, int num
     float x = 0.0f;
     float y = 0.0f;
     EventTouch touchEvent;
-    
+    CCLOG("handleTouchesOfEndOrCancel in");
+
     for (int i = 0; i < num; ++i)
     {
         id = ids[i];
@@ -441,7 +444,8 @@ void GLView::handleTouchesOfEndOrCancel(EventTouch::EventCode eventCode, int num
         CCLOG("touchesEnded or touchesCancel: size = 0");
         return;
     }
-    
+    CCLOG("handleTouchesOfEndOrCancel out");
+
     touchEvent._eventCode = eventCode;
     auto dispatcher = Director::getInstance()->getEventDispatcher();
     dispatcher->dispatchEvent(&touchEvent);
