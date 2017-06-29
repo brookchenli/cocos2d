@@ -244,8 +244,9 @@ NSString * const kCDN_AudioManagerInitialised = @"kCDN_AudioManagerInitialised";
 
 @implementation CDAudioManager
 #define BACKGROUND_MUSIC_CHANNEL kASC_Left
+#define BACKGROUND_MUSIC_CHANNEL2 kASC_Rigth
 
-@synthesize soundEngine, willPlayBackgroundMusic;
+@synthesize soundEngine, willPlayBackgroundMusic, willPlayBackgroundMusic2;
 static CDAudioManager *sharedManager;
 static tAudioManagerState _sharedManagerState = kAMStateUninitialised;
 static tAudioManagerMode configuredMode;
@@ -439,7 +440,7 @@ static BOOL configured = FALSE;
         CDLongAudioSource *leftChannel = [[CDLongAudioSource alloc] init];
         leftChannel.backgroundMusic = YES;
         CDLongAudioSource *rightChannel = [[CDLongAudioSource alloc] init];
-        rightChannel.backgroundMusic = NO;
+        rightChannel.backgroundMusic = YES;
         [audioSourceChannels insertObject:leftChannel atIndex:kASC_Left];    
         [audioSourceChannels insertObject:rightChannel atIndex:kASC_Right];
         [leftChannel release];
@@ -447,6 +448,9 @@ static BOOL configured = FALSE;
         //Used to support legacy APIs
         backgroundMusic = [self audioSourceForChannel:BACKGROUND_MUSIC_CHANNEL];
         backgroundMusic.delegate = self;
+        
+        backgroundMusic2 = [self audioSourceForChannel:kASC_Right];
+        backgroundMusic2.delegate = self;
         
         //Add handler for bad al context messages, these are posted by the sound engine.
         [[NSNotificationCenter defaultCenter] addObserver:self    selector:@selector(badAlContextHandler) name:kCDN_BadAlContext object:nil];
@@ -457,7 +461,9 @@ static BOOL configured = FALSE;
 
 -(void) dealloc {
     CDLOGINFO(@"Denshion::CDAudioManager - deallocating");
+    NSLog(@"file=%s func=%s", __FILE__, __FUNCTION__);
     [self stopBackgroundMusic];
+    [self stopBackgroundMusic2];
     [soundEngine release];
     [[NSNotificationCenter defaultCenter] removeObserver:self];
     [self audioSessionSetActive:NO];
@@ -482,9 +488,14 @@ static BOOL configured = FALSE;
 }    
 
 -(BOOL) isBackgroundMusicPlaying {
+    NSLog(@"file=%s func=%s", __FILE__, __FUNCTION__);
     return [self.backgroundMusic isPlaying];
 }    
 
+-(BOOL) isBackgroundMusic2Playing {
+    NSLog(@"file=%s func=%s", __FILE__, __FUNCTION__);
+    return [self.backgroundMusic2 isPlaying];
+}
 //NB: originally I tried using a route change listener and intended to store the current route,
 //however, on a 3gs running 3.1.2 no route change is generated when the user switches the 
 //ringer mute switch to off (i.e. enables sound) therefore polling is the only reliable way to
@@ -552,16 +563,27 @@ static BOOL configured = FALSE;
 -(CDLongAudioSource*) backgroundMusic
 {
     return backgroundMusic;
-}    
+}
+
+-(CDLongAudioSource*) backgroundMusic2
+{
+    return backgroundMusic2;
+}
 
 //Load background music ready for playing
 -(void) preloadBackgroundMusic:(NSString*) filePath
 {
     [self.backgroundMusic load:filePath];    
-}    
+}
+
+-(void) preloadBackgroundMusic2:(NSString*) filePath
+{
+    [self.backgroundMusic2 load:filePath];
+}
 
 -(void) playBackgroundMusic:(NSString*) filePath loop:(BOOL) loop
 {
+    NSLog(@"file=%s func=%s", __FILE__, __FUNCTION__);
     [self.backgroundMusic load:filePath];
 
 	if (loop) {
@@ -578,15 +600,51 @@ static BOOL configured = FALSE;
 	[self.backgroundMusic play];
 }
 
+-(void) playBackgroundMusic2:(NSString*) filePath loop:(BOOL) loop
+{
+    NSLog(@"file=%s func=%s", __FILE__, __FUNCTION__);
+    [self.backgroundMusic2 load:filePath];
+    
+    if (loop) {
+        [self.backgroundMusic2 setNumberOfLoops:-1];
+    } else {
+        [self.backgroundMusic2 setNumberOfLoops:0];
+    }
+    
+    if (!willPlayBackgroundMusic || _mute) {
+        CDLOGINFO(@"Denshion::CDAudioManager - play bgm aborted because audio is not exclusive or sound is muted");
+        return;
+    }
+    
+    [self.backgroundMusic2 play];
+}
+
+
 -(void) stopBackgroundMusic
 {
+    NSLog(@"file=%s func=%s", __FILE__, __FUNCTION__);
     [self.backgroundMusic stop];
 }
 
+-(void) stopBackgroundMusic2
+{
+    NSLog(@"file=%s func=%s", __FILE__, __FUNCTION__);
+    [self.backgroundMusic2 stop];
+}
+
+
+
 -(void) pauseBackgroundMusic
 {
+    NSLog(@"file=%s func=%s", __FILE__, __FUNCTION__);
     [self.backgroundMusic pause];
-}    
+}
+
+-(void) pauseBackgroundMusic2
+{
+    NSLog(@"file=%s func=%s", __FILE__, __FUNCTION__);
+    [self.backgroundMusic2 pause];
+}
 
 -(void) resumeBackgroundMusic
 {
@@ -600,14 +658,34 @@ static BOOL configured = FALSE;
     }
     
     [self.backgroundMusic resume];
-}    
+}
+
+-(void) resumeBackgroundMusic2
+{
+    if (!willPlayBackgroundMusic || _mute) {
+        CDLOGINFO(@"Denshion::CDAudioManager - resume bgm aborted because audio is not exclusive or sound is muted");
+        return;
+    }
+    
+    if (![self.backgroundMusic2 paused]) {
+        return;
+    }
+    
+    [self.backgroundMusic2 resume];
+}
 
 -(void) rewindBackgroundMusic
 {
     [self.backgroundMusic rewind];
-}    
+}
+
+-(void) rewindBackgroundMusic2
+{
+    [self.backgroundMusic2 rewind];
+}
 
 -(void) setBackgroundMusicCompletionListener:(id) listener selector:(SEL) selector {
+    NSLog(@"file=%s func=%s", __FILE__, __FUNCTION__);
     backgroundMusicCompletionListener = listener;
     backgroundMusicCompletionSelector = selector;
 }    
@@ -721,7 +799,9 @@ static BOOL configured = FALSE;
 - (void) applicationWillTerminate:(NSNotification *) notification
 {
     CDLOGINFO(@"Denshion::CDAudioManager - audio manager handling terminate");
+    NSLog(@"file=%s func=%s", __FILE__, __FUNCTION__);
     [self stopBackgroundMusic];
+    [self stopBackgroundMusic2];
 }
 
 /** The audio source completed playing */

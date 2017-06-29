@@ -83,43 +83,107 @@ static CDBufferManager *bufferManager = nil;
 #pragma mark SimpleAudioEngine - background music
 
 -(void) preloadBackgroundMusic:(NSString*) filePath {
+    NSLog(@"file=%s func=%s", __FILE__, __FUNCTION__);
     [am preloadBackgroundMusic:filePath];
+}
+
+-(void) preloadBackgroundMusic2:(NSString*) filePath {
+    NSLog(@"file=%s func=%s", __FILE__, __FUNCTION__);
+    [am preloadBackgroundMusic2:filePath];
 }
 
 -(void) playBackgroundMusic:(NSString*) filePath
 {
+    NSLog(@"file=%s func=%s", __FILE__, __FUNCTION__);
     [am playBackgroundMusic:filePath loop:TRUE];
+}
+
+-(void) playBackgroundMusic2:(NSString*) filePath
+{
+    NSLog(@"file=%s func=%s", __FILE__, __FUNCTION__);
+    [am playBackgroundMusic2:filePath loop:TRUE];
 }
 
 -(void) playBackgroundMusic:(NSString*) filePath loop:(BOOL) loop
 {
+    NSLog(@"file=%s func=%s", __FILE__, __FUNCTION__);
     [am playBackgroundMusic:filePath loop:loop];
+}
+
+-(void) playBackgroundMusic2:(NSString*) filePath loop:(BOOL) loop
+{
+    NSLog(@"file=%s func=%s", __FILE__, __FUNCTION__);
+    [am playBackgroundMusic2:filePath loop:loop];
 }
 
 -(void) stopBackgroundMusic
 {
+    NSLog(@"file=%s func=%s", __FILE__, __FUNCTION__);
     [am stopBackgroundMusic];
 }
 
+-(void) stopBackgroundMusic2
+{
+    NSLog(@"file=%s func=%s", __FILE__, __FUNCTION__);
+    [am stopBackgroundMusic2];
+}
+
+
 -(void) pauseBackgroundMusic {
+    NSLog(@"file=%s func=%s", __FILE__, __FUNCTION__);
     [am pauseBackgroundMusic];
-}    
+}
+
+-(void) pauseBackgroundMusic2 {
+    NSLog(@"file=%s func=%s", __FILE__, __FUNCTION__);
+    [am pauseBackgroundMusic2];
+}
 
 -(void) resumeBackgroundMusic {
+    NSLog(@"file=%s func=%s", __FILE__, __FUNCTION__);
     [am resumeBackgroundMusic];
-}    
+}
+
+-(void) resumeBackgroundMusic2 {
+    NSLog(@"file=%s func=%s", __FILE__, __FUNCTION__);
+    [am resumeBackgroundMusic2];
+}
 
 -(void) rewindBackgroundMusic {
+    NSLog(@"file=%s func=%s", __FILE__, __FUNCTION__);
     [am rewindBackgroundMusic];
 }
 
+-(void) rewindBackgroundMusic2 {
+    NSLog(@"file=%s func=%s", __FILE__, __FUNCTION__);
+    [am rewindBackgroundMusic2];
+}
+
 -(BOOL) isBackgroundMusicPlaying {
-    return [am isBackgroundMusicPlaying];
-}    
+    BOOL value = [am isBackgroundMusicPlaying];
+    NSLog(@"file=%s func=%s value=%@", __FILE__, __FUNCTION__, value?@"yes":@"no");
+    return value;
+}
+
+-(BOOL) isBackgroundMusic2Playing {
+    BOOL value = [am isBackgroundMusic2Playing];
+    NSLog(@"file=%s func=%s value=%@", __FILE__, __FUNCTION__, value?@"yes":@"no");
+    return value;
+}
 
 -(BOOL) willPlayBackgroundMusic {
-    return [am willPlayBackgroundMusic];
+    BOOL value = [am willPlayBackgroundMusic];
+    NSLog(@"file=%s func=%s value=%@", __FILE__, __FUNCTION__, value?@"yes":@"no");
+    return value;
 }
+
+-(BOOL) willPlayBackgroundMusic2 {
+    BOOL value = [am willPlayBackgroundMusic2];
+    NSLog(@"file=%s func=%s value=%@", __FILE__, __FUNCTION__, value?@"yes":@"no");
+    return value;
+}
+
+
 
 #pragma mark SimpleAudioEngine - sound effects
 
@@ -207,13 +271,26 @@ static CDBufferManager *bufferManager = nil;
 #pragma mark SimpleAudioEngine - BackgroundMusicVolume
 -(float) backgroundMusicVolume
 {
+    NSLog(@"file=%s func=%s", __FILE__, __FUNCTION__);
     return am.backgroundMusic.volume;
 }    
 
+-(float) backgroundMusic2Volume
+{
+    NSLog(@"file=%s func=%s", __FILE__, __FUNCTION__);
+    return am.backgroundMusic2.volume;
+}
 -(void) setBackgroundMusicVolume:(float) volume
 {
+    NSLog(@"file=%s func=%s", __FILE__, __FUNCTION__);
     am.backgroundMusic.volume = volume;
 }    
+
+-(void) setBackgroundMusic2Volume:(float) volume
+{
+    NSLog(@"file=%s func=%s", __FILE__, __FUNCTION__);
+    am.backgroundMusic2.volume = volume;
+}
 
 #pragma mark SimpleAudioEngine - EffectsVolume
 -(float) effectsVolume

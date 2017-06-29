@@ -143,6 +143,7 @@ public:
      * @lua isMusicPlaying
      */
     virtual bool isBackgroundMusicPlaying();
+    virtual bool isBackgroundMusicPlaying2();
 
     // 
     // properties
@@ -154,6 +155,7 @@ public:
      * @lua getMusicVolume
      */
     virtual float getBackgroundMusicVolume();
+    virtual float getBackgroundMusicVolume2();
 
     /**
      * Set the volume of background music.
@@ -163,6 +165,7 @@ public:
      * @lua setMusicVolume
      */
     virtual void setBackgroundMusicVolume(float volume);
+    virtual void setBackgroundMusicVolume2(float volume);
 
 
   /**
@@ -173,7 +176,7 @@ public:
      * @lua preloadMusic
      */
     virtual void preloadBackgroundMusic2(const char* filePath);
-    
+
     /**
      * Play background music2.
      * 
@@ -230,7 +233,7 @@ public:
      * @js isMusicPlaying
      * @lua isMusicPlaying
      */
-    virtual bool isBackgroundMusicPlaying2();
+    //virtual bool isBackgroundMusicPlaying2();
 
     // 
     // properties
@@ -241,7 +244,7 @@ public:
      * @js getMusicVolume
      * @lua getMusicVolume
      */
-    virtual float getBackgroundMusicVolume2();
+    //virtual float getBackgroundMusic2Volume();
 
     /**
      * Set the volume of background music2.
@@ -250,7 +253,7 @@ public:
      * @js setMusicVolume
      * @lua setMusicVolume
      */
-    virtual void setBackgroundMusicVolume2(float volume);	
+    //virtual void setBackgroundMusic2Volume(float volume);
 
     /**
      * The volume of the effects within the range of 0.0 as the minimum and 1.0 as the maximum.

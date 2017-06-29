@@ -64534,14 +64534,18 @@ bool js_cocos2dx_SimpleAudioEngine_preloadBackgroundMusic(JSContext *cx, uint32_
     js_proxy_t *proxy = jsb_get_js_proxy(obj);
     CocosDenshion::SimpleAudioEngine* cobj = (CocosDenshion::SimpleAudioEngine *)(proxy ? proxy->ptr : NULL);
     JSB_PRECONDITION2( cobj, cx, false, "js_cocos2dx_SimpleAudioEngine_preloadBackgroundMusic : Invalid Native Object");
+    cocos2d::log("[%s] line=%d  ", __FUNCTION__, __LINE__);
+
     if (argc == 1) {
         const char* arg0 = nullptr;
         std::string arg0_tmp; ok &= jsval_to_std_string(cx, args.get(0), &arg0_tmp); arg0 = arg0_tmp.c_str();
         JSB_PRECONDITION2(ok, cx, false, "js_cocos2dx_SimpleAudioEngine_preloadBackgroundMusic : Error processing arguments");
         cobj->preloadBackgroundMusic(arg0);
         args.rval().setUndefined();
+        cocos2d::log("[%s] line=%d  ", __FUNCTION__, __LINE__);
         return true;
     }
+    cocos2d::log("[%s] line=%d  ", __FUNCTION__, __LINE__);
 
     JS_ReportError(cx, "js_cocos2dx_SimpleAudioEngine_preloadBackgroundMusic : wrong number of arguments: %d, was expecting %d", argc, 1);
     return false;
@@ -64555,14 +64559,18 @@ bool js_cocos2dx_SimpleAudioEngine_preloadBackgroundMusic2(JSContext *cx, uint32
     js_proxy_t *proxy = jsb_get_js_proxy(obj);
     CocosDenshion::SimpleAudioEngine* cobj = (CocosDenshion::SimpleAudioEngine *)(proxy ? proxy->ptr : NULL);
     JSB_PRECONDITION2( cobj, cx, false, "js_cocos2dx_SimpleAudioEngine_preloadBackgroundMusic2 : Invalid Native Object");
+    cocos2d::log("[%s] line=%d  ", __FUNCTION__, __LINE__);
+
     if (argc == 1) {
         const char* arg0 = nullptr;
         std::string arg0_tmp; ok &= jsval_to_std_string(cx, args.get(0), &arg0_tmp); arg0 = arg0_tmp.c_str();
         JSB_PRECONDITION2(ok, cx, false, "js_cocos2dx_SimpleAudioEngine_preloadBackgroundMusic2 : Error processing arguments");
         cobj->preloadBackgroundMusic2(arg0);
         args.rval().setUndefined();
+        cocos2d::log("[%s] line=%d  ", __FUNCTION__, __LINE__);
         return true;
     }
+    cocos2d::log("[%s] line=%d  ", __FUNCTION__, __LINE__);
 
     JS_ReportError(cx, "js_cocos2dx_SimpleAudioEngine_preloadBackgroundMusic : wrong number of arguments: %d, was expecting %d", argc, 1);
     return false;
@@ -64576,9 +64584,11 @@ bool js_cocos2dx_SimpleAudioEngine_stopBackgroundMusic(JSContext *cx, uint32_t a
     js_proxy_t *proxy = jsb_get_js_proxy(obj);
     CocosDenshion::SimpleAudioEngine* cobj = (CocosDenshion::SimpleAudioEngine *)(proxy ? proxy->ptr : NULL);
     JSB_PRECONDITION2( cobj, cx, false, "js_cocos2dx_SimpleAudioEngine_stopBackgroundMusic : Invalid Native Object");
+    cocos2d::log("[%s] line=%d  ", __FUNCTION__, __LINE__);
     if (argc == 0) {
         cobj->stopBackgroundMusic();
         args.rval().setUndefined();
+        cocos2d::log("[%s] line=%d  ", __FUNCTION__, __LINE__);
         return true;
     }
     if (argc == 1) {
@@ -64587,8 +64597,10 @@ bool js_cocos2dx_SimpleAudioEngine_stopBackgroundMusic(JSContext *cx, uint32_t a
         JSB_PRECONDITION2(ok, cx, false, "js_cocos2dx_SimpleAudioEngine_stopBackgroundMusic : Error processing arguments");
         cobj->stopBackgroundMusic(arg0);
         args.rval().setUndefined();
+        cocos2d::log("[%s] line=%d  ", __FUNCTION__, __LINE__);
         return true;
     }
+    cocos2d::log("[%s] line=%d  ", __FUNCTION__, __LINE__);
 
     JS_ReportError(cx, "js_cocos2dx_SimpleAudioEngine_stopBackgroundMusic : wrong number of arguments: %d, was expecting %d", argc, 0);
     return false;
@@ -64602,9 +64614,11 @@ bool js_cocos2dx_SimpleAudioEngine_stopBackgroundMusic2(JSContext *cx, uint32_t 
     js_proxy_t *proxy = jsb_get_js_proxy(obj);
     CocosDenshion::SimpleAudioEngine* cobj = (CocosDenshion::SimpleAudioEngine *)(proxy ? proxy->ptr : NULL);
     JSB_PRECONDITION2( cobj, cx, false, "js_cocos2dx_SimpleAudioEngine_stopBackgroundMusic2 : Invalid Native Object");
+    cocos2d::log("js_cocos2dx_SimpleAudioEngine_stopBackgroundMusic2    111");
     if (argc == 0) {
         cobj->stopBackgroundMusic2();
         args.rval().setUndefined();
+        cocos2d::log("js_cocos2dx_SimpleAudioEngine_stopBackgroundMusic2    222");
         return true;
     }
     if (argc == 1) {
@@ -64613,9 +64627,10 @@ bool js_cocos2dx_SimpleAudioEngine_stopBackgroundMusic2(JSContext *cx, uint32_t 
         JSB_PRECONDITION2(ok, cx, false, "js_cocos2dx_SimpleAudioEngine_stopBackgroundMusic2 : Error processing arguments");
         cobj->stopBackgroundMusic2(arg0);
         args.rval().setUndefined();
+        cocos2d::log("js_cocos2dx_SimpleAudioEngine_stopBackgroundMusic2    333");
         return true;
     }
-
+    cocos2d::log("js_cocos2dx_SimpleAudioEngine_stopBackgroundMusic2    444");
     JS_ReportError(cx, "js_cocos2dx_SimpleAudioEngine_stopBackgroundMusic2 : wrong number of arguments: %d, was expecting %d", argc, 0);
     return false;
 }
@@ -64627,11 +64642,14 @@ bool js_cocos2dx_SimpleAudioEngine_stopAllEffects(JSContext *cx, uint32_t argc, 
     js_proxy_t *proxy = jsb_get_js_proxy(obj);
     CocosDenshion::SimpleAudioEngine* cobj = (CocosDenshion::SimpleAudioEngine *)(proxy ? proxy->ptr : NULL);
     JSB_PRECONDITION2( cobj, cx, false, "js_cocos2dx_SimpleAudioEngine_stopAllEffects : Invalid Native Object");
+    cocos2d::log("[%s] line=%d  ", __FUNCTION__, __LINE__);
     if (argc == 0) {
         cobj->stopAllEffects();
         args.rval().setUndefined();
+        cocos2d::log("[%s] line=%d  ", __FUNCTION__, __LINE__);
         return true;
     }
+    cocos2d::log("[%s] line=%d  ", __FUNCTION__, __LINE__);
 
     JS_ReportError(cx, "js_cocos2dx_SimpleAudioEngine_stopAllEffects : wrong number of arguments: %d, was expecting %d", argc, 0);
     return false;
@@ -64643,14 +64661,16 @@ bool js_cocos2dx_SimpleAudioEngine_getBackgroundMusicVolume(JSContext *cx, uint3
     js_proxy_t *proxy = jsb_get_js_proxy(obj);
     CocosDenshion::SimpleAudioEngine* cobj = (CocosDenshion::SimpleAudioEngine *)(proxy ? proxy->ptr : NULL);
     JSB_PRECONDITION2( cobj, cx, false, "js_cocos2dx_SimpleAudioEngine_getBackgroundMusicVolume : Invalid Native Object");
+    cocos2d::log("[%s] line=%d  ", __FUNCTION__, __LINE__);
     if (argc == 0) {
         double ret = cobj->getBackgroundMusicVolume();
         jsval jsret = JSVAL_NULL;
         jsret = DOUBLE_TO_JSVAL(ret);
         args.rval().set(jsret);
+        cocos2d::log("[%s] line=%d  ", __FUNCTION__, __LINE__);
         return true;
     }
-
+    cocos2d::log("[%s] line=%d  ", __FUNCTION__, __LINE__);
     JS_ReportError(cx, "js_cocos2dx_SimpleAudioEngine_getBackgroundMusicVolume : wrong number of arguments: %d, was expecting %d", argc, 0);
     return false;
 }
@@ -64661,14 +64681,16 @@ bool js_cocos2dx_SimpleAudioEngine_getBackgroundMusicVolume2(JSContext *cx, uint
     js_proxy_t *proxy = jsb_get_js_proxy(obj);
     CocosDenshion::SimpleAudioEngine* cobj = (CocosDenshion::SimpleAudioEngine *)(proxy ? proxy->ptr : NULL);
     JSB_PRECONDITION2( cobj, cx, false, "js_cocos2dx_SimpleAudioEngine_getBackgroundMusicVolume2 : Invalid Native Object");
+    cocos2d::log("[%s] line=%d  ", __FUNCTION__, __LINE__);
     if (argc == 0) {
         double ret = cobj->getBackgroundMusicVolume2();
         jsval jsret = JSVAL_NULL;
         jsret = DOUBLE_TO_JSVAL(ret);
         args.rval().set(jsret);
+        cocos2d::log("[%s] line=%d  ", __FUNCTION__, __LINE__);
         return true;
     }
-
+    cocos2d::log("[%s] line=%d  ", __FUNCTION__, __LINE__);
     JS_ReportError(cx, "js_cocos2dx_SimpleAudioEngine_getBackgroundMusicVolume2 : wrong number of arguments: %d, was expecting %d", argc, 0);
     return false;
 }
@@ -64680,12 +64702,14 @@ bool js_cocos2dx_SimpleAudioEngine_resumeBackgroundMusic(JSContext *cx, uint32_t
     js_proxy_t *proxy = jsb_get_js_proxy(obj);
     CocosDenshion::SimpleAudioEngine* cobj = (CocosDenshion::SimpleAudioEngine *)(proxy ? proxy->ptr : NULL);
     JSB_PRECONDITION2( cobj, cx, false, "js_cocos2dx_SimpleAudioEngine_resumeBackgroundMusic : Invalid Native Object");
+    cocos2d::log("[%s] line=%d  ", __FUNCTION__, __LINE__);
     if (argc == 0) {
         cobj->resumeBackgroundMusic();
         args.rval().setUndefined();
+        cocos2d::log("[%s] line=%d  ", __FUNCTION__, __LINE__);
         return true;
     }
-
+    cocos2d::log("[%s] line=%d  ", __FUNCTION__, __LINE__);
     JS_ReportError(cx, "js_cocos2dx_SimpleAudioEngine_resumeBackgroundMusic : wrong number of arguments: %d, was expecting %d", argc, 0);
     return false;
 }
@@ -64696,12 +64720,14 @@ bool js_cocos2dx_SimpleAudioEngine_resumeBackgroundMusic2(JSContext *cx, uint32_
     js_proxy_t *proxy = jsb_get_js_proxy(obj);
     CocosDenshion::SimpleAudioEngine* cobj = (CocosDenshion::SimpleAudioEngine *)(proxy ? proxy->ptr : NULL);
     JSB_PRECONDITION2( cobj, cx, false, "js_cocos2dx_SimpleAudioEngine_resumeBackgroundMusic2 : Invalid Native Object");
+    cocos2d::log("[%s] line=%d  ", __FUNCTION__, __LINE__);
     if (argc == 0) {
         cobj->resumeBackgroundMusic2();
         args.rval().setUndefined();
+        cocos2d::log("[%s] line=%d  ", __FUNCTION__, __LINE__);
         return true;
     }
-
+    cocos2d::log("[%s] line=%d  ", __FUNCTION__, __LINE__);
     JS_ReportError(cx, "js_cocos2dx_SimpleAudioEngine_resumeBackgroundMusic2 : wrong number of arguments: %d, was expecting %d", argc, 0);
     return false;
 }
@@ -64714,15 +64740,17 @@ bool js_cocos2dx_SimpleAudioEngine_setBackgroundMusicVolume(JSContext *cx, uint3
     js_proxy_t *proxy = jsb_get_js_proxy(obj);
     CocosDenshion::SimpleAudioEngine* cobj = (CocosDenshion::SimpleAudioEngine *)(proxy ? proxy->ptr : NULL);
     JSB_PRECONDITION2( cobj, cx, false, "js_cocos2dx_SimpleAudioEngine_setBackgroundMusicVolume : Invalid Native Object");
+    cocos2d::log("[%s] line=%d  ", __FUNCTION__, __LINE__);
     if (argc == 1) {
         double arg0 = 0;
         ok &= JS::ToNumber( cx, args.get(0), &arg0) && !std::isnan(arg0);
         JSB_PRECONDITION2(ok, cx, false, "js_cocos2dx_SimpleAudioEngine_setBackgroundMusicVolume : Error processing arguments");
         cobj->setBackgroundMusicVolume(arg0);
         args.rval().setUndefined();
+        cocos2d::log("[%s] line=%d  ", __FUNCTION__, __LINE__);
         return true;
     }
-
+    cocos2d::log("[%s] line=%d  ", __FUNCTION__, __LINE__);
     JS_ReportError(cx, "js_cocos2dx_SimpleAudioEngine_setBackgroundMusicVolume : wrong number of arguments: %d, was expecting %d", argc, 1);
     return false;
 }
@@ -64734,14 +64762,17 @@ bool js_cocos2dx_SimpleAudioEngine_setBackgroundMusicVolume2(JSContext *cx, uint
     js_proxy_t *proxy = jsb_get_js_proxy(obj);
     CocosDenshion::SimpleAudioEngine* cobj = (CocosDenshion::SimpleAudioEngine *)(proxy ? proxy->ptr : NULL);
     JSB_PRECONDITION2( cobj, cx, false, "js_cocos2dx_SimpleAudioEngine_setBackgroundMusicVolume2 : Invalid Native Object");
+    cocos2d::log("[%s] line=%d  ", __FUNCTION__, __LINE__);
     if (argc == 1) {
         double arg0 = 0;
         ok &= JS::ToNumber( cx, args.get(0), &arg0) && !std::isnan(arg0);
         JSB_PRECONDITION2(ok, cx, false, "js_cocos2dx_SimpleAudioEngine_setBackgroundMusicVolume2 : Error processing arguments");
         cobj->setBackgroundMusicVolume2(arg0);
         args.rval().setUndefined();
+        cocos2d::log("[%s] line=%d  ", __FUNCTION__, __LINE__);
         return true;
     }
+    cocos2d::log("[%s] line=%d  ", __FUNCTION__, __LINE__);
 
     JS_ReportError(cx, "js_cocos2dx_SimpleAudioEngine_setBackgroundMusicVolume2 : wrong number of arguments: %d, was expecting %d", argc, 1);
     return false;
@@ -64755,15 +64786,17 @@ bool js_cocos2dx_SimpleAudioEngine_preloadEffect(JSContext *cx, uint32_t argc, j
     js_proxy_t *proxy = jsb_get_js_proxy(obj);
     CocosDenshion::SimpleAudioEngine* cobj = (CocosDenshion::SimpleAudioEngine *)(proxy ? proxy->ptr : NULL);
     JSB_PRECONDITION2( cobj, cx, false, "js_cocos2dx_SimpleAudioEngine_preloadEffect : Invalid Native Object");
+    cocos2d::log("[%s] line=%d  ", __FUNCTION__, __LINE__);
     if (argc == 1) {
         const char* arg0 = nullptr;
         std::string arg0_tmp; ok &= jsval_to_std_string(cx, args.get(0), &arg0_tmp); arg0 = arg0_tmp.c_str();
         JSB_PRECONDITION2(ok, cx, false, "js_cocos2dx_SimpleAudioEngine_preloadEffect : Error processing arguments");
         cobj->preloadEffect(arg0);
         args.rval().setUndefined();
+        cocos2d::log("[%s] line=%d  ", __FUNCTION__, __LINE__);
         return true;
     }
-
+    cocos2d::log("[%s] line=%d  ", __FUNCTION__, __LINE__);
     JS_ReportError(cx, "js_cocos2dx_SimpleAudioEngine_preloadEffect : wrong number of arguments: %d, was expecting %d", argc, 1);
     return false;
 }
@@ -64774,15 +64807,18 @@ bool js_cocos2dx_SimpleAudioEngine_isBackgroundMusicPlaying(JSContext *cx, uint3
     js_proxy_t *proxy = jsb_get_js_proxy(obj);
     CocosDenshion::SimpleAudioEngine* cobj = (CocosDenshion::SimpleAudioEngine *)(proxy ? proxy->ptr : NULL);
     JSB_PRECONDITION2( cobj, cx, false, "js_cocos2dx_SimpleAudioEngine_isBackgroundMusicPlaying : Invalid Native Object");
+    cocos2d::log("js_cocos2dx_SimpleAudioEngine_isBackgroundMusicPlaying    111");
     if (argc == 0) {
         bool ret = cobj->isBackgroundMusicPlaying();
         jsval jsret = JSVAL_NULL;
         jsret = BOOLEAN_TO_JSVAL(ret);
         args.rval().set(jsret);
+        cocos2d::log("js_cocos2dx_SimpleAudioEngine_isBackgroundMusicPlaying    222");
         return true;
     }
 
     JS_ReportError(cx, "js_cocos2dx_SimpleAudioEngine_isBackgroundMusicPlaying : wrong number of arguments: %d, was expecting %d", argc, 0);
+    cocos2d::log("js_cocos2dx_SimpleAudioEngine_isBackgroundMusicPlaying    333");
     return false;
 }
 bool js_cocos2dx_SimpleAudioEngine_isBackgroundMusicPlaying2(JSContext *cx, uint32_t argc, jsval *vp)
@@ -64792,15 +64828,18 @@ bool js_cocos2dx_SimpleAudioEngine_isBackgroundMusicPlaying2(JSContext *cx, uint
     js_proxy_t *proxy = jsb_get_js_proxy(obj);
     CocosDenshion::SimpleAudioEngine* cobj = (CocosDenshion::SimpleAudioEngine *)(proxy ? proxy->ptr : NULL);
     JSB_PRECONDITION2( cobj, cx, false, "js_cocos2dx_SimpleAudioEngine_isBackgroundMusicPlaying2 : Invalid Native Object");
+    cocos2d::log("js_cocos2dx_SimpleAudioEngine_isBackgroundMusicPlaying2    111");
     if (argc == 0) {
         bool ret = cobj->isBackgroundMusicPlaying2();
         jsval jsret = JSVAL_NULL;
         jsret = BOOLEAN_TO_JSVAL(ret);
         args.rval().set(jsret);
+        cocos2d::log("js_cocos2dx_SimpleAudioEngine_isBackgroundMusicPlaying2    222");
         return true;
     }
 
     JS_ReportError(cx, "js_cocos2dx_SimpleAudioEngine_isBackgroundMusicPlaying2 : wrong number of arguments: %d, was expecting %d", argc, 0);
+    cocos2d::log("js_cocos2dx_SimpleAudioEngine_isBackgroundMusicPlaying2    333");
     return false;
 }
 
@@ -64811,14 +64850,16 @@ bool js_cocos2dx_SimpleAudioEngine_getEffectsVolume(JSContext *cx, uint32_t argc
     js_proxy_t *proxy = jsb_get_js_proxy(obj);
     CocosDenshion::SimpleAudioEngine* cobj = (CocosDenshion::SimpleAudioEngine *)(proxy ? proxy->ptr : NULL);
     JSB_PRECONDITION2( cobj, cx, false, "js_cocos2dx_SimpleAudioEngine_getEffectsVolume : Invalid Native Object");
+    cocos2d::log("[%s] line=%d  ", __FUNCTION__, __LINE__);
     if (argc == 0) {
         double ret = cobj->getEffectsVolume();
         jsval jsret = JSVAL_NULL;
         jsret = DOUBLE_TO_JSVAL(ret);
         args.rval().set(jsret);
+        cocos2d::log("[%s] line=%d  ", __FUNCTION__, __LINE__);
         return true;
     }
-
+    cocos2d::log("[%s] line=%d  ", __FUNCTION__, __LINE__);
     JS_ReportError(cx, "js_cocos2dx_SimpleAudioEngine_getEffectsVolume : wrong number of arguments: %d, was expecting %d", argc, 0);
     return false;
 }
@@ -64829,14 +64870,16 @@ bool js_cocos2dx_SimpleAudioEngine_willPlayBackgroundMusic(JSContext *cx, uint32
     js_proxy_t *proxy = jsb_get_js_proxy(obj);
     CocosDenshion::SimpleAudioEngine* cobj = (CocosDenshion::SimpleAudioEngine *)(proxy ? proxy->ptr : NULL);
     JSB_PRECONDITION2( cobj, cx, false, "js_cocos2dx_SimpleAudioEngine_willPlayBackgroundMusic : Invalid Native Object");
+    cocos2d::log("[%s] line=%d  ", __FUNCTION__, __LINE__);
     if (argc == 0) {
         bool ret = cobj->willPlayBackgroundMusic();
         jsval jsret = JSVAL_NULL;
         jsret = BOOLEAN_TO_JSVAL(ret);
         args.rval().set(jsret);
+        cocos2d::log("[%s] line=%d  ", __FUNCTION__, __LINE__);
         return true;
     }
-
+    cocos2d::log("[%s] line=%d  ", __FUNCTION__, __LINE__);
     JS_ReportError(cx, "js_cocos2dx_SimpleAudioEngine_willPlayBackgroundMusic : wrong number of arguments: %d, was expecting %d", argc, 0);
     return false;
 }
@@ -64847,14 +64890,16 @@ bool js_cocos2dx_SimpleAudioEngine_willPlayBackgroundMusic2(JSContext *cx, uint3
     js_proxy_t *proxy = jsb_get_js_proxy(obj);
     CocosDenshion::SimpleAudioEngine* cobj = (CocosDenshion::SimpleAudioEngine *)(proxy ? proxy->ptr : NULL);
     JSB_PRECONDITION2( cobj, cx, false, "js_cocos2dx_SimpleAudioEngine_willPlayBackgroundMusic2 : Invalid Native Object");
+    cocos2d::log("[%s] line=%d  ", __FUNCTION__, __LINE__);
     if (argc == 0) {
         bool ret = cobj->willPlayBackgroundMusic2();
         jsval jsret = JSVAL_NULL;
         jsret = BOOLEAN_TO_JSVAL(ret);
         args.rval().set(jsret);
+        cocos2d::log("[%s] line=%d  ", __FUNCTION__, __LINE__);
         return true;
     }
-
+    cocos2d::log("[%s] line=%d  ", __FUNCTION__, __LINE__);
     JS_ReportError(cx, "js_cocos2dx_SimpleAudioEngine_willPlayBackgroundMusic2 : wrong number of arguments: %d, was expecting %d", argc, 0);
     return false;
 }
@@ -64867,15 +64912,17 @@ bool js_cocos2dx_SimpleAudioEngine_pauseEffect(JSContext *cx, uint32_t argc, jsv
     js_proxy_t *proxy = jsb_get_js_proxy(obj);
     CocosDenshion::SimpleAudioEngine* cobj = (CocosDenshion::SimpleAudioEngine *)(proxy ? proxy->ptr : NULL);
     JSB_PRECONDITION2( cobj, cx, false, "js_cocos2dx_SimpleAudioEngine_pauseEffect : Invalid Native Object");
+    cocos2d::log("[%s] line=%d  ", __FUNCTION__, __LINE__);
     if (argc == 1) {
         unsigned int arg0 = 0;
         ok &= jsval_to_uint32(cx, args.get(0), &arg0);
         JSB_PRECONDITION2(ok, cx, false, "js_cocos2dx_SimpleAudioEngine_pauseEffect : Error processing arguments");
         cobj->pauseEffect(arg0);
         args.rval().setUndefined();
+        cocos2d::log("[%s] line=%d  ", __FUNCTION__, __LINE__);
         return true;
     }
-
+    cocos2d::log("[%s] line=%d  ", __FUNCTION__, __LINE__);
     JS_ReportError(cx, "js_cocos2dx_SimpleAudioEngine_pauseEffect : wrong number of arguments: %d, was expecting %d", argc, 1);
     return false;
 }
@@ -64968,12 +65015,14 @@ bool js_cocos2dx_SimpleAudioEngine_rewindBackgroundMusic(JSContext *cx, uint32_t
     js_proxy_t *proxy = jsb_get_js_proxy(obj);
     CocosDenshion::SimpleAudioEngine* cobj = (CocosDenshion::SimpleAudioEngine *)(proxy ? proxy->ptr : NULL);
     JSB_PRECONDITION2( cobj, cx, false, "js_cocos2dx_SimpleAudioEngine_rewindBackgroundMusic : Invalid Native Object");
+    cocos2d::log("[%s] line=%d  ", __FUNCTION__, __LINE__);
     if (argc == 0) {
         cobj->rewindBackgroundMusic();
         args.rval().setUndefined();
+        cocos2d::log("[%s] line=%d  ", __FUNCTION__, __LINE__);
         return true;
     }
-
+    cocos2d::log("[%s] line=%d  ", __FUNCTION__, __LINE__);
     JS_ReportError(cx, "js_cocos2dx_SimpleAudioEngine_rewindBackgroundMusic : wrong number of arguments: %d, was expecting %d", argc, 0);
     return false;
 }
@@ -64984,12 +65033,14 @@ bool js_cocos2dx_SimpleAudioEngine_rewindBackgroundMusic2(JSContext *cx, uint32_
     js_proxy_t *proxy = jsb_get_js_proxy(obj);
     CocosDenshion::SimpleAudioEngine* cobj = (CocosDenshion::SimpleAudioEngine *)(proxy ? proxy->ptr : NULL);
     JSB_PRECONDITION2( cobj, cx, false, "js_cocos2dx_SimpleAudioEngine_rewindBackgroundMusic2 : Invalid Native Object");
+    cocos2d::log("[%s] line=%d  ", __FUNCTION__, __LINE__);
     if (argc == 0) {
         cobj->rewindBackgroundMusic2();
         args.rval().setUndefined();
+        cocos2d::log("[%s] line=%d  ", __FUNCTION__, __LINE__);
         return true;
     }
-
+    cocos2d::log("[%s] line=%d  ", __FUNCTION__, __LINE__);
     JS_ReportError(cx, "js_cocos2dx_SimpleAudioEngine_rewindBackgroundMusic2 : wrong number of arguments: %d, was expecting %d", argc, 0);
     return false;
 }
@@ -65002,12 +65053,15 @@ bool js_cocos2dx_SimpleAudioEngine_playBackgroundMusic(JSContext *cx, uint32_t a
     js_proxy_t *proxy = jsb_get_js_proxy(obj);
     CocosDenshion::SimpleAudioEngine* cobj = (CocosDenshion::SimpleAudioEngine *)(proxy ? proxy->ptr : NULL);
     JSB_PRECONDITION2( cobj, cx, false, "js_cocos2dx_SimpleAudioEngine_playBackgroundMusic : Invalid Native Object");
+    cocos2d::log("js_cocos2dx_SimpleAudioEngine_playBackgroundMusic    111");
+    cocos2d::log("[%s] line=%d  ", __FUNCTION__, __LINE__);
     if (argc == 1) {
         const char* arg0 = nullptr;
         std::string arg0_tmp; ok &= jsval_to_std_string(cx, args.get(0), &arg0_tmp); arg0 = arg0_tmp.c_str();
         JSB_PRECONDITION2(ok, cx, false, "js_cocos2dx_SimpleAudioEngine_playBackgroundMusic : Error processing arguments");
         cobj->playBackgroundMusic(arg0);
         args.rval().setUndefined();
+        cocos2d::log("[%s] line=%d  ", __FUNCTION__, __LINE__);
         return true;
     }
     if (argc == 2) {
@@ -65018,8 +65072,11 @@ bool js_cocos2dx_SimpleAudioEngine_playBackgroundMusic(JSContext *cx, uint32_t a
         JSB_PRECONDITION2(ok, cx, false, "js_cocos2dx_SimpleAudioEngine_playBackgroundMusic : Error processing arguments");
         cobj->playBackgroundMusic(arg0, arg1);
         args.rval().setUndefined();
+        cocos2d::log("js_cocos2dx_SimpleAudioEngine_playBackgroundMusic    333");
+        cocos2d::log("[%s] line=%d  ", __FUNCTION__, __LINE__);
         return true;
     }
+    cocos2d::log("[%s] line=%d  ", __FUNCTION__, __LINE__);
 
     JS_ReportError(cx, "js_cocos2dx_SimpleAudioEngine_playBackgroundMusic : wrong number of arguments: %d, was expecting %d", argc, 1);
     return false;
@@ -65032,12 +65089,14 @@ bool js_cocos2dx_SimpleAudioEngine_playBackgroundMusic2(JSContext *cx, uint32_t 
     js_proxy_t *proxy = jsb_get_js_proxy(obj);
     CocosDenshion::SimpleAudioEngine* cobj = (CocosDenshion::SimpleAudioEngine *)(proxy ? proxy->ptr : NULL);
     JSB_PRECONDITION2( cobj, cx, false, "js_cocos2dx_SimpleAudioEngine_playBackgroundMusic2 : Invalid Native Object");
+    cocos2d::log("js_cocos2dx_SimpleAudioEngine_playBackgroundMusic2    111");
     if (argc == 1) {
         const char* arg0 = nullptr;
         std::string arg0_tmp; ok &= jsval_to_std_string(cx, args.get(0), &arg0_tmp); arg0 = arg0_tmp.c_str();
         JSB_PRECONDITION2(ok, cx, false, "js_cocos2dx_SimpleAudioEngine_playBackgroundMusic2 : Error processing arguments");
         cobj->playBackgroundMusic2(arg0);
         args.rval().setUndefined();
+        cocos2d::log("js_cocos2dx_SimpleAudioEngine_playBackgroundMusic2    222");
         return true;
     }
     if (argc == 2) {
@@ -65048,9 +65107,10 @@ bool js_cocos2dx_SimpleAudioEngine_playBackgroundMusic2(JSContext *cx, uint32_t 
         JSB_PRECONDITION2(ok, cx, false, "js_cocos2dx_SimpleAudioEngine_playBackgroundMusic2 : Error processing arguments");
         cobj->playBackgroundMusic2(arg0, arg1);
         args.rval().setUndefined();
+        cocos2d::log("js_cocos2dx_SimpleAudioEngine_playBackgroundMusic2    333");
         return true;
     }
-
+    cocos2d::log("js_cocos2dx_SimpleAudioEngine_playBackgroundMusic2    444");
     JS_ReportError(cx, "js_cocos2dx_SimpleAudioEngine_playBackgroundMusic2 : wrong number of arguments: %d, was expecting %d", argc, 1);
     return false;
 }
@@ -65118,12 +65178,14 @@ bool js_cocos2dx_SimpleAudioEngine_pauseBackgroundMusic(JSContext *cx, uint32_t 
     js_proxy_t *proxy = jsb_get_js_proxy(obj);
     CocosDenshion::SimpleAudioEngine* cobj = (CocosDenshion::SimpleAudioEngine *)(proxy ? proxy->ptr : NULL);
     JSB_PRECONDITION2( cobj, cx, false, "js_cocos2dx_SimpleAudioEngine_pauseBackgroundMusic : Invalid Native Object");
+    cocos2d::log("[%s] line=%d  ", __FUNCTION__, __LINE__);
     if (argc == 0) {
         cobj->pauseBackgroundMusic();
         args.rval().setUndefined();
+        cocos2d::log("[%s] line=%d  ", __FUNCTION__, __LINE__);
         return true;
     }
-
+    cocos2d::log("[%s] line=%d  ", __FUNCTION__, __LINE__);
     JS_ReportError(cx, "js_cocos2dx_SimpleAudioEngine_pauseBackgroundMusic : wrong number of arguments: %d, was expecting %d", argc, 0);
     return false;
 }
@@ -65134,12 +65196,14 @@ bool js_cocos2dx_SimpleAudioEngine_pauseBackgroundMusic2(JSContext *cx, uint32_t
     js_proxy_t *proxy = jsb_get_js_proxy(obj);
     CocosDenshion::SimpleAudioEngine* cobj = (CocosDenshion::SimpleAudioEngine *)(proxy ? proxy->ptr : NULL);
     JSB_PRECONDITION2( cobj, cx, false, "js_cocos2dx_SimpleAudioEngine_pauseBackgroundMusic2 : Invalid Native Object");
+    cocos2d::log("[%s] line=%d  ", __FUNCTION__, __LINE__);
     if (argc == 0) {
         cobj->pauseBackgroundMusic2();
         args.rval().setUndefined();
+        cocos2d::log("[%s] line=%d  ", __FUNCTION__, __LINE__);
         return true;
     }
-
+    cocos2d::log("[%s] line=%d  ", __FUNCTION__, __LINE__);
     JS_ReportError(cx, "js_cocos2dx_SimpleAudioEngine_pauseBackgroundMusic2 : wrong number of arguments: %d, was expecting %d", argc, 0);
     return false;
 }

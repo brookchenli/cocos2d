@@ -114,6 +114,8 @@ typedef enum {
 @property (assign) id<CDLongAudioSourceDelegate> delegate;
 /* This long audio source functions as background music */
 @property (readwrite, nonatomic) BOOL backgroundMusic;
+@property (readwrite, nonatomic) BOOL backgroundMusic2;
+
 @property (readonly) BOOL paused;
 
 /** Loads the file into the audio source */
@@ -155,6 +157,8 @@ typedef enum {
 #endif
     CDSoundEngine        *soundEngine;
     CDLongAudioSource    *backgroundMusic;
+    CDLongAudioSource    *backgroundMusic2;
+
     NSMutableArray        *audioSourceChannels;
     NSString*            _audioSessionCategory;
     BOOL                _audioWasPlayingAtStartup;
@@ -175,7 +179,10 @@ typedef enum {
 
 @property (readonly) CDSoundEngine *soundEngine;
 @property (readonly) CDLongAudioSource *backgroundMusic;
+@property (readonly) CDLongAudioSource *backgroundMusic2;
+
 @property (readonly) BOOL willPlayBackgroundMusic;
+@property (readonly) BOOL willPlayBackgroundMusic2;
 
 /** Returns the shared singleton */
 + (CDAudioManager *) sharedManager;
@@ -214,18 +221,31 @@ typedef enum {
  It is recommended to use .aac files as background music since they are decoded by the device (hardware).
  */
 -(void) playBackgroundMusic:(NSString*) filePath loop:(BOOL) loop;
+-(void) playBackgroundMusic2:(NSString*) filePath loop:(BOOL) loop;
+
 /** Preloads a background music */
 -(void) preloadBackgroundMusic:(NSString*) filePath;
+-(void) preloadBackgroundMusic2:(NSString*) filePath;
+
 /** Stops playing the background music */
 -(void) stopBackgroundMusic;
+-(void) stopBackgroundMusic2;
+
 /** Pauses the background music */
 -(void) pauseBackgroundMusic;
+-(void) pauseBackgroundMusic2;
+
 /** Rewinds the background music */
 -(void) rewindBackgroundMusic;
+-(void) rewindBackgroundMusic2;
+
 /** Resumes playing the background music */
 -(void) resumeBackgroundMusic;
+-(void) resumeBackgroundMusic2;
+
 /** Returns whether or not the background music is playing */
 -(BOOL) isBackgroundMusicPlaying;
+-(BOOL) isBackgroundMusic2Playing;
 
 -(void) setBackgroundMusicCompletionListener:(id) listener selector:(SEL) selector;
 

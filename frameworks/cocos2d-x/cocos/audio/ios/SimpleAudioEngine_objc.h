@@ -45,31 +45,48 @@
 
 /** Background music volume. Range is 0.0f to 1.0f. This will only have an effect if willPlayBackgroundMusic returns YES */
 @property (readwrite) float backgroundMusicVolume;
+@property (readwrite) float backgroundMusic2Volume;
+
 /** Effects volume. Range is 0.0f to 1.0f */
 @property (readwrite) float effectsVolume;
 /** If NO it indicates background music will not be played either because no background music is loaded or the audio session does not permit it.*/
 @property (readonly) BOOL willPlayBackgroundMusic;
+@property (readonly) BOOL willPlayBackgroundMusic2;
 
 /** returns the shared instance of the SimpleAudioEngine object */
 + (SimpleAudioEngine*) sharedEngine;
 
 /** Preloads a music file so it will be ready to play as background music */
 -(void) preloadBackgroundMusic:(NSString*) filePath;
+-(void) preloadBackgroundMusic2:(NSString*) filePath;
 
 /** plays background music in a loop*/
 -(void) playBackgroundMusic:(NSString*) filePath;
+-(void) playBackgroundMusic2:(NSString*) filePath;
+
 /** plays background music, if loop is true the music will repeat otherwise it will be played once */
 -(void) playBackgroundMusic:(NSString*) filePath loop:(BOOL) loop;
+-(void) playBackgroundMusic2:(NSString*) filePath loop:(BOOL) loop;
+
 /** stops playing background music */
 -(void) stopBackgroundMusic;
+-(void) stopBackgroundMusic2;
+
 /** pauses the background music */
 -(void) pauseBackgroundMusic;
+-(void) pauseBackgroundMusic2;
+
 /** resume background music that has been paused */
 -(void) resumeBackgroundMusic;
+-(void) resumeBackgroundMusic2;
+
 /** rewind the background music */
 -(void) rewindBackgroundMusic;
+-(void) rewindBackgroundMusic2;
+
 /** returns whether or not the background music is playing */
 -(BOOL) isBackgroundMusicPlaying;
+-(BOOL) isBackgroundMusic2Playing;
 
 /** plays an audio effect with a file path*/
 -(ALuint) playEffect:(NSString*) filePath loop:(BOOL) loop;
@@ -93,6 +110,7 @@
 -(void) unloadEffect:(NSString*) filePath;
 /** Gets a CDSoundSource object set up to play the specified file. */
 -(CDSoundSource *) soundSourceForFile:(NSString*) filePath;
+
 
 /** Shuts down the shared audio engine instance so that it can be reinitialised */
 +(void) end;
