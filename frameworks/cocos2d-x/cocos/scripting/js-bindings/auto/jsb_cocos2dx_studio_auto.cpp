@@ -6810,10 +6810,12 @@ bool js_cocos2dx_studio_ComAudio_stopBackgroundMusic(JSContext *cx, uint32_t arg
     js_proxy_t *proxy = jsb_get_js_proxy(obj);
     cobj = (cocostudio::ComAudio *)(proxy ? proxy->ptr : nullptr);
     JSB_PRECONDITION2( cobj, cx, false, "js_cocos2dx_studio_ComAudio_stopBackgroundMusic : Invalid Native Object");
+    cocos2d::log("file=%s  function=%s  111", __FILE__, __FUNCTION__);
     do {
         if (argc == 0) {
             cobj->stopBackgroundMusic();
             args.rval().setUndefined();
+            cocos2d::log("file=%s  function=%s  222", __FILE__, __FUNCTION__);
             return true;
         }
     } while(0);
@@ -6824,10 +6826,11 @@ bool js_cocos2dx_studio_ComAudio_stopBackgroundMusic(JSContext *cx, uint32_t arg
             arg0 = JS::ToBoolean(args.get(0));
             cobj->stopBackgroundMusic(arg0);
             args.rval().setUndefined();
+            cocos2d::log("file=%s  function=%s  333", __FILE__, __FUNCTION__);
             return true;
         }
     } while(0);
-
+    cocos2d::log("file=%s  function=%s  444", __FILE__, __FUNCTION__);
     JS_ReportError(cx, "js_cocos2dx_studio_ComAudio_stopBackgroundMusic : wrong number of arguments");
     return false;
 }
@@ -6842,10 +6845,12 @@ bool js_cocos2dx_studio_ComAudio_stopBackgroundMusic2(JSContext *cx, uint32_t ar
     js_proxy_t *proxy = jsb_get_js_proxy(obj);
     cobj = (cocostudio::ComAudio *)(proxy ? proxy->ptr : nullptr);
     JSB_PRECONDITION2( cobj, cx, false, "js_cocos2dx_studio_ComAudio_stopBackgroundMusic2 : Invalid Native Object");
+    cocos2d::log("file=%s  function=%s  111", __FILE__, __FUNCTION__);
     do {
         if (argc == 0) {
             cobj->stopBackgroundMusic2();
             args.rval().setUndefined();
+            cocos2d::log("file=%s  function=%s  222", __FILE__, __FUNCTION__);
             return true;
         }
     } while(0);
@@ -6856,10 +6861,11 @@ bool js_cocos2dx_studio_ComAudio_stopBackgroundMusic2(JSContext *cx, uint32_t ar
             arg0 = JS::ToBoolean(args.get(0));
             cobj->stopBackgroundMusic2(arg0);
             args.rval().setUndefined();
+            cocos2d::log("file=%s  function=%s  333", __FILE__, __FUNCTION__);
             return true;
         }
     } while(0);
-
+    cocos2d::log("file=%s  function=%s  444", __FILE__, __FUNCTION__);
     JS_ReportError(cx, "js_cocos2dx_studio_ComAudio_stopBackgroundMusic2 : wrong number of arguments");
     return false;
 }
