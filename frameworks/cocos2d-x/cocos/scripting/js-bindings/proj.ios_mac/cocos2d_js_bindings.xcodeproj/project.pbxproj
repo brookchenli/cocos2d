@@ -299,6 +299,10 @@
 		BAFA590A1B319F7E004F9246 /* jsb_cocos2dx_navmesh_conversions.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BAFA59071B319F7E004F9246 /* jsb_cocos2dx_navmesh_conversions.cpp */; };
 		BAFA590B1B319F7E004F9246 /* jsb_cocos2dx_navmesh_conversions.h in Headers */ = {isa = PBXBuildFile; fileRef = BAFA59081B319F7E004F9246 /* jsb_cocos2dx_navmesh_conversions.h */; };
 		BAFA590C1B319F7E004F9246 /* jsb_cocos2dx_navmesh_conversions.h in Headers */ = {isa = PBXBuildFile; fileRef = BAFA59081B319F7E004F9246 /* jsb_cocos2dx_navmesh_conversions.h */; };
+		BC752E8A1F1227B5007C501E /* chessItem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BC752E851F1227B5007C501E /* chessItem.cpp */; };
+		BC752E8B1F1227B5007C501E /* chessItem.h in Headers */ = {isa = PBXBuildFile; fileRef = BC752E861F1227B5007C501E /* chessItem.h */; };
+		BC752E8C1F1227B5007C501E /* 5chess_class.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BC752E881F1227B5007C501E /* 5chess_class.cpp */; };
+		BC752E8D1F1227B5007C501E /* 5chess_class.hpp in Headers */ = {isa = PBXBuildFile; fileRef = BC752E891F1227B5007C501E /* 5chess_class.hpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -410,6 +414,10 @@
 		BAFA59021B319F38004F9246 /* jsb_cocos2dx_navmesh_manual.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = jsb_cocos2dx_navmesh_manual.h; sourceTree = "<group>"; };
 		BAFA59071B319F7E004F9246 /* jsb_cocos2dx_navmesh_conversions.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = jsb_cocos2dx_navmesh_conversions.cpp; sourceTree = "<group>"; };
 		BAFA59081B319F7E004F9246 /* jsb_cocos2dx_navmesh_conversions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = jsb_cocos2dx_navmesh_conversions.h; sourceTree = "<group>"; };
+		BC752E851F1227B5007C501E /* chessItem.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = chessItem.cpp; sourceTree = "<group>"; };
+		BC752E861F1227B5007C501E /* chessItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = chessItem.h; sourceTree = "<group>"; };
+		BC752E881F1227B5007C501E /* 5chess_class.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = 5chess_class.cpp; sourceTree = "<group>"; };
+		BC752E891F1227B5007C501E /* 5chess_class.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = 5chess_class.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -465,6 +473,7 @@
 		1A119E2E18BDF19200352BAA /* auto */ = {
 			isa = PBXGroup;
 			children = (
+				BC752E831F1227B5007C501E /* chessItem */,
 				50864CF01C7CA95200B3BAB1 /* js_bindings_chipmunk_auto_classes_registration.h */,
 				50864CF11C7CA95200B3BAB1 /* js_bindings_chipmunk_auto_classes.cpp */,
 				50864CF21C7CA95200B3BAB1 /* js_bindings_chipmunk_auto_classes.h */,
@@ -716,6 +725,33 @@
 			path = navmesh;
 			sourceTree = "<group>";
 		};
+		BC752E831F1227B5007C501E /* chessItem */ = {
+			isa = PBXGroup;
+			children = (
+				BC752E841F1227B5007C501E /* 5chess */,
+				BC752E871F1227B5007C501E /* 5chess_bindings */,
+			);
+			path = chessItem;
+			sourceTree = "<group>";
+		};
+		BC752E841F1227B5007C501E /* 5chess */ = {
+			isa = PBXGroup;
+			children = (
+				BC752E851F1227B5007C501E /* chessItem.cpp */,
+				BC752E861F1227B5007C501E /* chessItem.h */,
+			);
+			path = 5chess;
+			sourceTree = "<group>";
+		};
+		BC752E871F1227B5007C501E /* 5chess_bindings */ = {
+			isa = PBXGroup;
+			children = (
+				BC752E881F1227B5007C501E /* 5chess_class.cpp */,
+				BC752E891F1227B5007C501E /* 5chess_class.hpp */,
+			);
+			path = 5chess_bindings;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -866,6 +902,7 @@
 				1A119F0418BDF19200352BAA /* spidermonkey_specifics.h in Headers */,
 				1A119EE818BDF19200352BAA /* jsb_opengl_manual.h in Headers */,
 				1A119ED618BDF19200352BAA /* js_bindings_core.h in Headers */,
+				BC752E8B1F1227B5007C501E /* chessItem.h in Headers */,
 				1A119EC418BDF19200352BAA /* js_bindings_ccbreader.h in Headers */,
 				1A119EE018BDF19200352BAA /* jsb_helper.h in Headers */,
 				1A119ECC18BDF19200352BAA /* jsb_cocos2dx_extension_manual.h in Headers */,
@@ -889,6 +926,7 @@
 				1A119EF218BDF19200352BAA /* js_bindings_system_functions_registration.h in Headers */,
 				1A119E8618BDF19200352BAA /* jsb_cocos2dx_auto.hpp in Headers */,
 				50864D061C7CA95200B3BAB1 /* js_bindings_chipmunk_functions.h in Headers */,
+				BC752E8D1F1227B5007C501E /* 5chess_class.hpp in Headers */,
 				50864CF71C7CA95200B3BAB1 /* js_bindings_chipmunk_auto_classes_registration.h in Headers */,
 				1A119F0818BDF19200352BAA /* jsb_cocos2dx_spine_manual.h in Headers */,
 				B38AD56F1B1D38700057DD7F /* jsb_cocos2dx_experimental_video_auto.hpp in Headers */,
@@ -1085,6 +1123,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ADAC23EE1C2044DC0049A6A2 /* js_module_register.cpp in Sources */,
+				BC752E8C1F1227B5007C501E /* 5chess_class.cpp in Sources */,
 				0541A75B19738AD200E45470 /* JavaScriptObjCBridge.mm in Sources */,
 				420BBCF81AA48EE900493976 /* jsb_cocos2dx_3d_manual.cpp in Sources */,
 				1A119E8A18BDF19200352BAA /* jsb_cocos2dx_builder_auto.cpp in Sources */,
@@ -1123,6 +1162,7 @@
 				1A119EA218BDF19200352BAA /* jsb_cocos2dx_studio_auto.cpp in Sources */,
 				1A119EDC18BDF19200352BAA /* js_manual_conversions.cpp in Sources */,
 				83A5661A18DA878400FC31A0 /* jsb_socketio.cpp in Sources */,
+				BC752E8A1F1227B5007C501E /* chessItem.cpp in Sources */,
 				1A119EE218BDF19200352BAA /* jsb_opengl_functions.cpp in Sources */,
 				BA4095C31A6F730A005E53F6 /* jsb_cocos2dx_studio_conversions.cpp in Sources */,
 				50864CFA1C7CA95200B3BAB1 /* js_bindings_chipmunk_auto_classes.cpp in Sources */,
@@ -1306,7 +1346,7 @@
 				);
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				USER_HEADER_SEARCH_PATHS = "$(inherited) $(SRCROOT)/../../../../external/spidermonkey/include/ios $(SRCROOT)/../../../../cocos/platform/ios $(SRCROOT)/../../../../plugin/protocols/include $(SRCROOT)/../../../../external/curl/include/ios";
+				USER_HEADER_SEARCH_PATHS = "$(inherited) $(SRCROOT)/../../../../external/spidermonkey/include/ios $(SRCROOT)/../../../../cocos/platform/ios $(SRCROOT)/../../../../plugin/protocols/include $(SRCROOT)/../../../../external/curl/include/ios $(SRCROOT)/../auto/chessItem/5chess_bindings $(SRCROOT)/../auto/chessItem/5chess";
 				VALID_ARCHS = "arm64 armv7";
 			};
 			name = Debug;
@@ -1330,7 +1370,7 @@
 				);
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				USER_HEADER_SEARCH_PATHS = "$(inherited) $(SRCROOT)/../../../../external/spidermonkey/include/ios $(SRCROOT)/../../../../cocos/platform/ios $(SRCROOT)/../../../../plugin/protocols/include $(SRCROOT)/../../../../external/curl/include/ios";
+				USER_HEADER_SEARCH_PATHS = "$(inherited) $(SRCROOT)/../../../../external/spidermonkey/include/ios $(SRCROOT)/../../../../cocos/platform/ios $(SRCROOT)/../../../../plugin/protocols/include $(SRCROOT)/../../../../external/curl/include/ios $(SRCROOT)/../auto/chessItem/5chess_bindings $(SRCROOT)/../auto/chessItem/5chess";
 				VALID_ARCHS = "arm64 armv7";
 			};
 			name = Release;

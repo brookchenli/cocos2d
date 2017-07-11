@@ -25,6 +25,7 @@
 #include "physics3d/jsb_cocos2dx_physics3d_manual.h"
 #include "jsb_cocos2dx_navmesh_auto.hpp"
 #include "navmesh/jsb_cocos2dx_navmesh_manual.h"
+#include "chessItem/5chess_bindings/5chess_class.hpp"
 
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID || CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
 #include "jsb_cocos2dx_experimental_video_auto.hpp"
@@ -150,6 +151,9 @@ bool CocosDelegate::applicationDidFinishLaunching()
 #elif (CC_TARGET_PLATFORM == CC_PLATFORM_IOS || CC_TARGET_PLATFORM == CC_PLATFORM_MAC)
     sc->addRegisterCallback(JavaScriptObjCBridge::_js_register);
 #endif
+    
+    sc->addRegisterCallback(register_all_5chess_class);
+    
     sc->start();
     sc->runScript("script/jsb_boot.js");
 #if defined(COCOS2D_DEBUG) && (COCOS2D_DEBUG > 0)
